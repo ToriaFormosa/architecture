@@ -1,0 +1,81 @@
+.lang-switcher {
+	$self: &;
+
+	@include list-reset;
+
+	&--white {
+		#{$self}__link {
+			color: $color-default-white;
+		}
+	}
+
+	&--menu,
+	&--line {
+		display: flex;
+		flex-wrap: wrap;
+
+		#{$self}__item {
+			margin-right: 24px;
+			margin-bottom: 0;
+		}
+	}
+
+	&--footer {
+		display: flex;
+		flex-wrap: wrap;
+
+		@include media(lg) {
+			display: block;
+		}
+
+		#{$self}__item {
+			display: block;
+			line-height: 1;
+			margin-right: 24px;
+			margin-bottom: 0;
+
+			@include media(lg) {
+				margin-right: 0;
+				margin-bottom: 6px;
+			}
+		}
+	}
+
+	&__item {
+		margin-bottom: 14px;
+
+		@include media(xl) {
+			//margin-right: 28px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__link {
+		@include text(14px, 1.625, $color-default-black);
+		text-transform: uppercase;
+
+		@include transition(color);
+
+		@include media(xl) {
+			font-size: 16px;
+		}
+
+		&--current {
+			color: $color-yellow;
+			pointer-events: none;
+		}
+
+		&:hover,
+		&:focus {
+			outline: none;
+			color: $color-yellow;
+		}
+
+		&:not(&--current):active {
+			opacity: 0.7;
+		}
+	}
+}

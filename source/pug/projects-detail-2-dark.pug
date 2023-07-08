@@ -1,0 +1,95 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Projects Detail 2 Dark';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let isDark = true;
+	- let currentPage = 2.14; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+	article.article
+		header.article__header
+			.container
+				h1.article__heading.heading.heading--size-large Villa near Moscow
+				ul.article__header-meta.project-meta
+					li.project-meta__item(data-aos="fade")
+						.project-meta__item-title Client
+						.project-meta__item-text Richard Hunt
+					li.project-meta__item(data-aos="fade", data-aos-delay="200")
+						.project-meta__item-title Completion
+						.project-meta__item-text February 5th, 2017
+					li.project-meta__item(data-aos="fade", data-aos-delay="400")
+						.project-meta__item-title Project type
+						.project-meta__item-text Villar, Residence
+					li.project-meta__item(data-aos="fade", data-aos-delay="600")
+						.project-meta__item-title Designer
+						.project-meta__item-text Samuel
+
+		.article__project-hero(data-aos="fade")
+			img(src="img/picture/projects/detail-2/project-main-image.jpg", srcset="img/picture/projects/detail-2/project-main-image@2x.jpg", width="1800", height="768", alt="Villa near Moscow photo")
+
+		.container
+			.article__project-text(data-aos="fade")
+				p <strong>Totally focused on tools to enhance and help your content shine.</strong> We have created this theme thinking only in options helpfully for the daily needs in a creative environment like an agency, a small studio. We have created this theme thinking only in options helpfully for the daily needs in a creative environment like an agency, a small studio.
+				p As a result working with hundred of creatives all these past years, we are now delivering a theme that will be part of your toolset.
+
+		.article__project-images.container
+			.row
+				.col-12.col-md-6(data-aos="fade")
+					img(src="img/picture/projects/detail-2/1.jpg", srcset="img/picture/projects/detail-2/1@2x.jpg", width="886", height="886", alt="")
+				.article__project-images-cell.col-12.col-md-6(data-aos="fade")
+					img(src="img/picture/projects/detail-2/2.jpg", srcset="img/picture/projects/detail-2/2@2x.jpg", width="886", height="428", alt="")
+					.row
+						.article__project-images-cell.col-12.col-md-6(data-aos="fade")
+							img(src="img/picture/projects/detail-2/3.jpg", srcset="img/picture/projects/detail-2/3@2x.jpg", width="428", height="428", alt="")
+						.article__project-images-cell.col-12.col-md-6(data-aos="fade")
+							img(src="img/picture/projects/detail-2/4.jpg", srcset="img/picture/projects/detail-2/4@2x.jpg", width="428", height="428", alt="")
+
+		section.webpage__services-provided.services-provided
+			.container
+				h2.services-provided__heading.heading.heading--size-small(data-aos="fade") Services provided
+
+				.row
+					.services-provided__column.col-12.col-md(data-aos="fade")
+						h3.services-provided__column-heading Home design
+						.services-provided__column-text Projects for many large domesProjects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.tic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+
+					.services-provided__column.col-12.col-md(data-aos="fade", data-aos-delay="200")
+						h3.services-provided__column-heading Planing
+						.services-provided__column-text Founded in 2007, Sparch is specializing in providing innovative services such as websitFounded in 2007, Sparch is specializing in providing innovative services such as website design, brand identity and marketinge design, brand identity and marketing
+
+					.services-provided__column.col-12.col-md(data-aos="fade", data-aos-delay="400")
+						h3.services-provided__column-heading Strategy
+						.services-provided__column-text Projects for many large domestic and foreign corporations, enProjects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.terprises in many elds such as nance, banking, F&B, education, communication.
+
+		section.architects
+			.container
+				h2.architects__heading.heading.heading--size-small(data-aos="fade") Architects
+
+				.row
+					- let i = 0;
+					- let path = 'img/picture/projects/detail-2/architects/';
+					- let delay = 0;
+					while i < 6
+						- delay = i % 3 === 0 ? 0 : delay + 200;
+
+						.architects__column.col-12.col-md-6.col-lg-4(data-aos="fade", data-aos-delay= delay)
+							.card.card--small.card--masonry
+								.card__image
+									img(src= path + (i + 1) + ".jpg", srcset= path + (i + 1) + "@2x.jpg", width="350", height="350", alt="")
+								.card__content
+									h3.card__heading Jack WIlshere
+									.card__text CEO / Founder
+									.card__bottom
+										+social('card__social', ['facebook', 'twitter', 'linkedin-original'])
+
+							- i++;
+
+
+
+
+block footer
+	include modules/footer

@@ -1,0 +1,230 @@
+.label-subs {
+	position: relative;
+
+	> button[type="submit"] {
+		width: auto;
+		padding: 0;
+		position: absolute;
+		left: 50%;
+		bottom: -30px;
+		transform: translateX(-50%);
+		font-size: 16px;
+		font-weight: 600;
+		letter-spacing: 1.2px;
+		text-transform: uppercase;
+		cursor: pointer;
+		border: none;
+		background-color: $color-default-white;
+		@include transition(color);
+
+		@include media(sm) {
+			left: unset;
+			bottom: unset;
+			right: 0;
+			top: 17px;
+			transform: none;
+		}
+
+		@include media(lg) {
+			&:hover {
+				//color: $color-orange;
+			}
+		}
+	}
+
+	label {
+		width: 100%;
+		display: block;
+		position: relative;
+		padding: 15px 25px 15px 45px;
+		border-bottom: 1px solid $color-default-black;
+		box-sizing: border-box;
+
+		@include media(sm) {
+			padding: 15px 100px 15px 45px;
+		}
+
+		&::before {
+			content: "";
+			width: 24px;
+			height: 24px; //15px;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			//background: url("../img/mail.png") no-repeat center left;
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3e%3cpath d='M58.7 10.7H5.3C2.4 10.7 0 13.1 0 16v32c0 2.9 2.4 5.3 5.3 5.3h53.3c2.9 0 5.3-2.4 5.3-5.3V16c.1-2.9-2.3-5.3-5.2-5.3zm0 35.7L40.5 29.3l18.1-10.9v28zM28.3 32.3c1.1.8 2.4 1.1 3.7 1.1 1.3 0 2.7-.3 3.7-1.1L52.5 48H10.7l17.1-16 .5.3zm24-16.3L33.1 27.7c-.5.3-1.3.3-1.9 0L11.7 16h40.6zM23.2 29.1L5.3 45.9V18.4l17.9 10.7z'/%3e%3c/svg%3e ");
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			background-size: 24px auto;
+		}
+
+		input {
+			width: 100%;
+			padding: 0;
+
+			&::placeholder {
+				opacity: 0.5;
+				color: $color-default-black;
+			}
+
+			&:focus::placeholder {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+.custom-input {
+	width: 100%;
+	height: 46px;
+	padding: 16px 20px;
+	border: 1px solid #d4d4d4;
+	background-color: $color-default-white;
+	box-sizing: border-box;
+	@include transition(border-color);
+
+	&::placeholder {
+		font-size: 16px;
+		opacity: 0.5;
+	}
+
+	&:focus {
+		border-color: $color-default-black;
+
+		&::placeholder {
+			opacity: 0;
+		}
+	}
+}
+
+input[type="search"] {
+	width: 100%;
+	padding: 16px 50px 16px 25px;
+	border: 1px solid $color-grey-c9;
+	background: $color-default-white url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3e%3cpath d='M62.9 56.5l-17-13.8c7.2-9.9 6.1-23.7-2.7-32.5C38.4 5.3 32 2.7 25.3 2.7s-13 2.6-17.8 7.4S0 21.3 0 28s2.7 13.1 7.5 17.9c5.1 5.1 11.5 7.5 17.9 7.5 6.1 0 12.3-2.1 17.1-6.7l17.3 14.1c.5.5 1.1.5 1.6.5.8 0 1.6-.3 2.1-1.1.8-1 .8-2.6-.6-3.7zM25.3 48c-5.3 0-10.4-2.1-14.1-5.9-3.7-3.7-5.9-8.8-5.9-14.1s2.1-10.4 5.9-14.1S20 8 25.3 8s10.4 2.1 14.1 5.9 5.9 8.8 5.9 14.1-2.1 10.4-5.9 14.1c-3.7 3.8-8.7 5.9-14.1 5.9z'/%3e%3c/svg%3e ")
+		no-repeat calc(100% - 30px) center;
+	background-size: 13px;
+	box-sizing: border-box;
+	outline: none;
+	@include transition(border-color);
+
+	&:hover,
+	&:focus {
+		border-color: $color-default-black;
+	}
+
+	&::placeholder {
+		font-family: $font-family--main;
+		font-size: 16px;
+		color: $color-grey-76;
+		opacity: 1;
+	}
+
+	&:focus::placeholder {
+		opacity: 0;
+	}
+}
+
+textarea.custom-input {
+	height: 150px;
+	resize: none;
+}
+
+.slide-counter {
+	font-size: 24px;
+	line-height: 24px;
+	//color: $color-grey3;
+
+	@include media(lg) {
+		font-size: 30px;
+		line-height: 30px;
+	}
+}
+
+.arrow-square {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	background-color: $color-default-white;
+	border: 1px solid $color-default-white;
+	position: absolute;
+	z-index: 1;
+	outline: none;
+	padding: 0;
+	@include transition(all);
+
+	@include media(xl) {
+		width: 60px;
+		height: 60px;
+	}
+
+	@include media(lg) {
+		&:hover {
+			background-color: transparent;
+
+			svg {
+				fill: $color-default-white;
+			}
+		}
+	}
+
+	svg {
+		width: 50%;
+		height: 50%;
+		fill: $color-default-black;
+		@include transition(fill);
+	}
+
+	&--prev {
+		svg {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+#pp-nav {
+	display: none;
+	right: 64px !important;
+	top: 47%;
+
+	@include media(xxl) {
+		display: block;
+	}
+
+	ul li {
+		width: 11px;
+		height: 11px;
+		margin: 0;
+
+		&:hover a {
+			span {
+				margin: 0;
+				background-color: $color-yellow3;
+			}
+		}
+
+		+ li {
+			margin-top: 23px;
+		}
+
+		a {
+			span {
+				width: 11px;
+				height: 11px;
+				background-color: $color-default-white;
+				left: unset;
+				right: 0;
+				border: none;
+				@include transition(background-color);
+			}
+
+			&.active span {
+				background-color: $color-yellow3;
+				@include transition(background-color);
+			}
+		}
+	}
+}

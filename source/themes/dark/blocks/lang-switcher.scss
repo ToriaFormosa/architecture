@@ -1,0 +1,11 @@
+.lang-switcher {
+	$self: &;
+
+	&__link {
+		color: $color-default-white;
+
+		&--current {
+			color: $color-yellow;
+		}
+	}
+}

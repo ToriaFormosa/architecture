@@ -1,0 +1,36 @@
+.architects {
+	&__heading {
+		position: relative;
+		margin: 0 0 32px;
+
+		@include media(md) {
+			margin-bottom: 64px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 100px;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: -15px;
+			top: 30%;
+			width: 45px;
+			border-top: solid 2px $color-yellow;
+			transform: translateX(-100%);
+
+			@include media(md) {
+				width: 70px;
+			}
+
+			@include media(xl) {
+				left: -36px;
+			}
+		}
+	}
+
+	&__column {
+		margin-top: 30px;
+	}
+}

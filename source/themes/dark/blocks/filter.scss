@@ -1,0 +1,11 @@
+.filter {
+	$self: &;
+
+	&__item {
+		color: $color-default-white;
+
+		&--active {
+			color: $color-yellow;
+		}
+	}
+}

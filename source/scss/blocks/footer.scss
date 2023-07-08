@@ -1,0 +1,152 @@
+.footer {
+	$self: &;
+
+	&--lite {
+		#{$self}__inner {
+			padding-top: 46px;
+			padding-bottom: 46px;
+
+			&::before {
+				display: none;
+			}
+		}
+
+		#{$self}__lang-switcher {
+			margin-left: auto;
+		}
+	}
+
+	&--white {
+		#{$self}__copy {
+			color: $color-default-white;
+		}
+
+		.lang-switcher {
+			&__link {
+				color: $color-default-white;
+
+				&--current {
+					color: $color-yellow;
+				}
+
+				&:focus {
+					color: $color-yellow;
+				}
+
+				@include hover {
+					color: $color-yellow;
+				}
+			}
+		}
+	}
+
+	&__inner {
+		position: relative;
+		padding-top: 32px;
+		padding-bottom: 32px;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 15px;
+			top: 0;
+
+			width: calc(100% - 30px);
+			border-top: solid 1px $color-grey3;
+		}
+
+		@include media(md) {
+			padding-top: 80px;
+			padding-bottom: 60px;
+		}
+
+		@include media(lg) {
+			padding-top: 100px;
+			padding-bottom: 80px;
+		}
+
+		@include media(xl) {
+			max-width: $width--full;
+			padding-top: 150px;
+			padding-bottom: 130px;
+		}
+	}
+
+	&__social {
+		@include media(md) {
+			margin-top: 8px;
+			justify-content: flex-end;
+		}
+	}
+
+	&__lang-switcher {
+		@include media(lg) {
+			//margin: 0 auto;
+		}
+	}
+
+	&__copyright {
+		margin-bottom: 12px;
+
+		@include text(16px, 1.625, $color-default-black);
+
+		span {
+			color: $color-default-black;
+		}
+
+		@include media(md) {
+			margin-bottom: 0;
+		}
+
+		@include media(xl) {
+			font-size: 16px;
+		}
+	}
+
+	&__column {
+		margin-bottom: 24px;
+
+		@include media(lg) {
+			margin-bottom: 0;
+		}
+
+		&-menu {
+			@include list-reset;
+		}
+
+		&-item {
+			&--current {
+				#{$self}__column-link {
+					color: $color-yellow;
+				}
+			}
+
+			@include media(xl) {
+				//margin-bottom: 9px;
+			}
+		}
+
+		&-link {
+			@include text(16px, 1.625, $color-default-black);
+			@include transition(color);
+
+			&:hover,
+			&:focus {
+				outline: none;
+				color: $color-yellow;
+			}
+
+			&:active {
+				opacity: 0.7;
+			}
+		}
+	}
+
+	&__logo {
+		margin-bottom: 20px;
+
+		@include media(md) {
+			margin-bottom: 0;
+		}
+	}
+}

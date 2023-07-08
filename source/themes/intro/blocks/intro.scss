@@ -1,0 +1,184 @@
+.intro {
+	&__header {
+		position: relative;
+		max-width: 1800px;
+		margin: 0 auto;
+		overflow: hidden;
+
+		img {
+			display: block;
+			width: 100%;
+			min-width: 768px;
+			height: auto;
+			margin-left: -384px;
+
+			@include media(md) {
+				margin-left: 0;
+			}
+		}
+	}
+
+	&__heading {
+		margin: 0;
+		font-family: $font-family--secondary;
+
+		@include text(32px, 1.45, $color-default-white);
+		font-weight: 700;
+
+		@include media(sm) {
+			font-size: 42px;
+		}
+
+		@include media(md) {
+			font-size: 52px;
+		}
+
+		@include media(xl) {
+			font-size: 70px;
+		}
+	}
+
+	&__wrapper {
+		position: absolute;
+		left: 50%;
+		bottom: 48px;
+		transform: translateX(-50%);
+		width: 100%;
+		max-width: 540px;
+		padding: 0 15px 0 55px;
+
+		@include media(md) {
+			max-width: 720px;
+			bottom: 94px;
+			padding-left: 72px;
+		}
+
+		@include media(lg) {
+			max-width: 960px;
+		}
+
+		@include media(xl) {
+			max-width: 1140px;
+		}
+	}
+
+	&__tag {
+		position: absolute;
+		left: 15px;
+		top: 50%;
+		transform: translateY(-50%) rotate(180deg);
+
+		@include text(14px, 1.5, $color-default-white);
+		font-weight: 500;
+		text-align: center;
+		letter-spacing: 0.2em;
+		white-space: nowrap;
+		writing-mode: vertical-lr;
+	}
+
+	&__section {
+		$section: &;
+		padding: 60px 0;
+
+		@include media(xl) {
+			max-width: $width--full;
+			margin: 0 auto;
+			padding: 160px 0;
+		}
+
+		&--bg {
+			background-color: $color-smoky;
+		}
+
+		&--full {
+			max-width: none;
+			overflow: hidden;
+		}
+
+		&-inner {
+			@include media(xl) {
+				max-width: $width--large;
+			}
+		}
+
+		&-header {
+			margin-bottom: 40px;
+			text-align: center;
+
+			@include media(xl) {
+				margin-bottom: 80px;
+			}
+		}
+
+		&-heading {
+			margin: 0;
+			font-family: $font-family--secondary;
+
+			@include text(36px, 1.25, $color-default-black);
+			font-weight: 700;
+
+			@include media(xl) {
+				font-size: 48px;
+			}
+		}
+
+		&-text {
+			max-width: 446px;
+			margin: 20px auto 0;
+			font-family: $font-family--secondary;
+
+			@include text(16px, 1.625, $color-default-black);
+		}
+	}
+
+	&__list {
+		list-style: none;
+		margin-top: -50px;
+		padding: 0;
+	}
+
+	&__card {
+		margin-top: 50px;
+
+		& > a {
+			display: block;
+
+			@include transition(opacity);
+
+			&:hover,
+			&:focus {
+				outline: none;
+				opacity: 0.7;
+			}
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+
+		&-title {
+			margin-top: 30px;
+
+			@include text(16px, 1.25);
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: 400;
+
+			a {
+				color: $color-default-black;
+
+				&:hover,
+				&:focus {
+					outline: none;
+					text-decoration: underline;
+				}
+
+				&:active {
+					opacity: 0.7;
+				}
+			}
+		}
+	}
+}

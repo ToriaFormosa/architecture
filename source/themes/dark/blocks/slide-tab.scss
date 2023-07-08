@@ -1,0 +1,22 @@
+.slide-tab {
+	$self: &;
+
+	&__number {
+		color: $color-default-white !important;
+	}
+
+	&__title {
+		color: $color-default-white !important;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	@include hover {
+		#{$self}__number,
+		#{$self}__title {
+			//	color: $color-yellow !important;
+		}
+	}
+}

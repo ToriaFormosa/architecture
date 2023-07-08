@@ -1,0 +1,95 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + '| Home parallax';
+	- let isHome = true; //- Если true то логотип не будет ссылкой
+	- let isDark = false;
+	- let currentPage = 1.05; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 1; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+	- let bodyModClass = 'webpage--parallax';
+
+block header
+	include modules/header-2
+
+block content
+	#pagepiling.homepage-parallax
+		// Section 1
+		section.section.parallax.pp-scrollable.dark(style='background-image: url("img/picture/home-parallax/item-1.jpg");')
+			.scroll-wrap
+				.container.parallax__container
+					.parallax__wrapper
+						.parallax__year 2020
+						.parallax__project
+							.parallax__tag Architecture
+							.parallax__title House Near Wrocklow
+							a.parallax__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail, target='_blank')
+								| See project
+								+icon('chevron-right')(width="20", height="20")
+						.parallax__counter
+							span.current 01
+							span.total / 05
+		// Section 2
+		section.section.parallax.pp-scrollable(style='background-image: url("img/picture/home-parallax/item-2.jpg");')
+			.scroll-wrap
+				.container.parallax__container
+					.parallax__wrapper
+						.parallax__year 2020
+						.parallax__project
+							.parallax__tag Residence
+							.parallax__title Residence Near Forest
+							a.parallax__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail, target='_blank')
+								| See project
+								+icon('chevron-right')(width="20", height="20")
+						.parallax__counter
+							span.current 02
+							span.total / 05
+		// Section 3
+		section.section.parallax.pp-scrollable.dark(style='background-image: url("img/picture/home-parallax/item-3.jpg");')
+			.scroll-wrap
+				.container.parallax__container
+					.parallax__wrapper
+						.parallax__year 2020
+						.parallax__project
+							.parallax__tag Architecture
+							.parallax__title Modern House
+							a.parallax__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail, target='_blank')
+								| See project
+								+icon('chevron-right')(width="20", height="20")
+						.parallax__counter
+							span.current 03
+							span.total / 05
+		// Section 4
+		section.section.parallax.pp-scrollable(style='background-image: url("img/picture/home-parallax/item-4.jpg");')
+			.scroll-wrap
+				.container.parallax__container
+					.parallax__wrapper
+						.parallax__year 2020
+						.parallax__project
+							.parallax__tag Exterior
+							.parallax__title Villa Near London
+							a.parallax__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail, target='_blank')
+								| See project
+								+icon('chevron-right')(width="20", height="20")
+						.parallax__counter
+							span.current 04
+							span.total / 05
+		// Section 5
+		section.section.parallax.pp-scrollable.dark(style='background-image: url("img/picture/home-parallax/item-5.jpg");')
+			.scroll-wrap
+				.container.parallax__container
+					.parallax__wrapper
+						.parallax__year 2020
+						.parallax__project
+							.parallax__tag Architecture
+							.parallax__title No 608 Apartment
+							a.parallax__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail, target='_blank')
+								| See project
+								+icon('chevron-right')(width="20", height="20")
+						.parallax__counter
+							span.current 05
+							span.total / 05
+
+
+
+
+block footer
+	include modules/footer-2

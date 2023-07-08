@@ -1,0 +1,10 @@
+.more {
+	&:hover,
+	&:focus {
+		color: $color-yellow;
+
+		svg {
+			fill: $color-yellow;
+		}
+	}
+}

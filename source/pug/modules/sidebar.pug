@@ -1,0 +1,59 @@
+// Sidebar
+section.sidebar
+	.sidebar__block
+		+input('search', 'search', 'Search')
+	.sidebar__block
+		p Related posts
+		.sidebar__popular-posts-wrapper
+			a.sidebar__related-post(href='single-post.html', target='_blank')
+				figure
+					img(src="img/picture/news/single-post/sidebar-1.jpg", srcset="img/picture/news/single-post/sidebar-1@2x.jpg", alt="")
+					.sidebar__related-post-content
+						p.title Horizontal Building
+						p.date Feb, 24th, 2017
+			a.sidebar__related-post(href='single-post.html', target='_blank')
+				figure
+					img(src="img/picture/news/single-post/sidebar-2.jpg", srcset="img/picture/news/single-post/sidebar-2@2x.jpg", alt="")
+					.sidebar__related-post-content
+						p.title House Near Wrocklow
+						p.date Feb, 24th, 2017
+			a.sidebar__related-post(href='single-post.html', target='_blank')
+				figure
+					img(src="img/picture/news/single-post/sidebar-3.jpg", srcset="img/picture/news/single-post/sidebar-3@2x.jpg", alt="")
+					.sidebar__related-post-content
+						p.title Horizontal Building
+						p.date Feb, 24th, 2017
+	.sidebar__block
+		p Categories
+		.sidebar__categories
+			.sidebar__categories-item
+				.sidebar__categories-name Architecture
+				.sidebar__categories-num (05)
+			.sidebar__categories-item
+				.sidebar__categories-name Interior
+				.sidebar__categories-num (02)
+			.sidebar__categories-item
+				.sidebar__categories-name Decoration
+				.sidebar__categories-num (12)
+			.sidebar__categories-item
+				.sidebar__categories-name Plants
+				.sidebar__categories-num (03)
+	.sidebar__block
+		p Archives
+		.sidebar__categories
+			.sidebar__categories-item
+				.sidebar__categories-name January 2020
+			.sidebar__categories-item
+				.sidebar__categories-name December 2019
+			.sidebar__categories-item
+				.sidebar__categories-name June 2018
+			.sidebar__categories-item
+				.sidebar__categories-name Jule 2017
+	.sidebar__block
+		p Popular Tags
+		.sidebar__tags
+			a.sidebar__tag-item(href='#', target='_blank') inspiration
+			a.sidebar__tag-item(href='#', target='_blank') interior
+			a.sidebar__tag-item(href='#', target='_blank') exterior
+			a.sidebar__tag-item(href='#', target='_blank') decoration
+			a.sidebar__tag-item(href='#', target='_blank') architecture

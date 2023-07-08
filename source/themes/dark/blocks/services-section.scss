@@ -1,0 +1,12 @@
+.services-section {
+	&__link {
+		&:focus {
+			outline: none;
+			color: $color-default-white;
+		}
+
+		@include hover {
+			color: $color-default-white;
+		}
+	}
+}

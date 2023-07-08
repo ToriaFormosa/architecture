@@ -1,0 +1,92 @@
+$width--full: 1830px;
+$width--large: 1550px;
+$width--small: 760px;
+// Colors
+//---------------------------------
+$color-default-white: #ffffff;
+$color-default-black: #000000;
+
+//$color-main: #616161;
+//$color-dark: #141419;
+$color-smoky: #f1f1f1;
+$color-smoky2: #f2f2f2;
+//$color-smoky3: #fbfaf6;
+
+$color-yellow: #fbc710;
+$color-yellow2: #fcce2e;
+$color-yellow3: #fcd54c;
+
+$color-yellow-hover: darken(#fbc710, 5%);
+
+$color-grey: #787878;
+$color-grey2: #a1a1a1;
+$color-grey3: #a6a6a6;
+$color-grey4: #c4c4c4;
+$color-grey5: #ababab;
+$color-grey6: #dcdcdc;
+$color-grey7: #c9c9c9;
+$color-grey8: #929292;
+$color-grey-76: #767676;
+$color-grey-c9: #c9c9c9;
+$color-grey-f4: #f4f4f4;
+$color-grey-f8: #f8f8f8;
+$color-grey-92: #929292;
+$color-grey-d3: #d3d3d3;
+$color-grey-cc: #cccccc;
+
+$color-dark: #272727;
+
+$color-base: $color-grey; // основной цвет текста, используется в миксине text()
+
+// Typography
+//--------------   $font-family, $file-name, $weight, $style: normal
+
+//
+$fonts: "Gilroy" "gilroy-bold" 700 normal, "Gilroy" "gilroy-regular" 400 normal,
+	"Gilroy" "gilroy-regularitalic" 400 italic, "Swansea" "swansea" 400 normal,
+	"Swansea" "swansea-bold" 700 normal, "Gilroy" "gilroy-semibold" 600 normal,
+	"Gilroy" "gilroy-semibolditalic" 600 italic, "Work Sans" "worksans" 400 normal,
+	"Work Sans" "worksansmedium" 500 normal,
+	"Work Sans" "worksanssemibold" 600 normal,
+	"Work Sans" "worksansbold" 700 normal;
+
+$font-family--main: "Work Sans", "Arial", sans-serif;
+$font-family--secondary: "Gilroy", "Arial", sans-serif;
+$font-family--third: "Swansea", "Arial", sans-serif;
+
+$font-size-base: 16px;
+$line-height-base: 1.625; //26px
+
+/////////////////////////////
+$default-transition-settings: 0.3s ease;
+
+///////////////////////////////
+
+// Viewports
+//---------------------------------
+
+$breakpoints: (
+	default: "default",
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1560px,
+	xxx: 1920px,
+) !default;
+
+// container max width
+$containerMaxWidths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+	xxl: 1340px,
+	xxx: 1840px,
+) !default;
+
+// Retina
+//---------------------------------
+
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;

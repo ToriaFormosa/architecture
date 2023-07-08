@@ -1,0 +1,74 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Projects Detail Dark';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let isDark = true;
+	- let currentPage = 2.13; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+	article.article
+		header.article__header
+			.container
+				h1.article__heading.heading.heading--size-large Residence in Forest
+				.article__header-text “Totally focused on tools to enhance and help your content shine. We have created this theme thinking only in options helpfully for the daily needs in a creative environment like an agency,”
+		.article__projects-slider.projects-slider.swiper-container.__js_projects-slider
+			.swiper-wrapper
+				.projects-slider__item.swiper-slide
+					img(src="img/picture/projects/detail/1.jpg", srcset="img/picture/projects/detail/1@2x.jpg", width="1111", height="768", alt="")
+				.projects-slider__item.swiper-slide
+					img(src="img/picture/projects/detail/2.jpg", srcset="img/picture/projects/detail/2@2x.jpg", width="1111", height="768", alt="")
+				.projects-slider__item.swiper-slide
+					img(src="img/picture/projects/detail/3.jpg", srcset="img/picture/projects/detail/3@2x.jpg", width="1111", height="768", alt="")
+			.projects-slider__navigation
+				button.projects-slider__next(type="button", aria-label="next")
+					+icon('chevron-right')(width="64", height="64")
+				button.projects-slider__prev(type="button", aria-label="prev")
+					+icon('chevron-left')(width="64", height="64")
+		.article__main.container
+			ul.article__project-meta.project-meta(data-aos="fade")
+				li.project-meta__item
+					.project-meta__item-title Client
+					.project-meta__item-text Richard Hunt
+				li.project-meta__item
+					.project-meta__item-title Completion
+					.project-meta__item-text February 5th, 2017
+				li.project-meta__item
+					.project-meta__item-title Project type
+					.project-meta__item-text Villar, Residence
+				li.project-meta__item
+					.project-meta__item-title Designer
+					.project-meta__item-text Samuel
+
+			.article__project-designer.project-designer.row
+				.project-designer__image.col-12.col-md-6.col-lg-4.order-md-1(data-aos="fade")
+					img(src="img/picture/projects/detail/designer.jpg", srcset="img/picture/projects/detail/designer@2x.jpg", width="350", height="532", alt="Samuel")
+				.project-designer__content.col-12.col-md-6.col-lg-8
+					.project-designer__title(data-aos="fade") <b>Samuel</b> / Designer
+					.project-designer__text
+						p(data-aos="fade") “Totally focused on tools to enhance and help your content shine. We have created this theme thinking only in options helpfully for the daily needs in a creative environment like an agency,”
+
+						p(data-aos="fade") I knew everything…been there, done that. She was in the moment, <br>I was in the past. She was mindful. I was mindless.
+			.process
+				h2.process__heading.heading(data-aos="fade") Process:
+
+				img(src="img/picture/projects/detail/sketch.jpg", srcset="img/picture/projects/detail/sketch@2x.jpg", width="1111", height="768", alt="", data-aos="fade")
+
+				ul.process__steps.steps
+					each title in ['Come up with a solution', 'Planing', 'Design']
+						li.steps__item(data-aos="fade")
+							.steps__item-title= title
+							.steps__item-text “Totally focused on tools to enhance and help your content shine. We have created this theme thinking only in options helpfully for the daily needs in a creative environment like an agency,”
+
+				img(src="img/picture/projects/detail/result.jpg", srcset="img/picture/projects/detail/result@2x.jpg", width="1111", height="768", alt="", data-aos="fade")
+
+				.process__text(data-aos="fade") Totally focused on tools to enhance and help your content shine. We have created this theme thinking only in options helpfully for the daily needs in a creative environment like an agency, a small studio.
+
+
+
+
+block footer
+	include modules/footer

@@ -1,0 +1,211 @@
+.contact-parallax {
+	padding-top: 40px;
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+
+		@include media(xl) {
+			flex-direction: row;
+		}
+	}
+
+	&__left {
+		width: 100%;
+		margin-bottom: 45px;
+
+		@include media(xl) {
+			max-width: 470px;
+			margin-right: 95px;
+			margin-bottom: 0;
+		}
+	}
+
+	&__title {
+		font-family: $font-family--secondary;
+		font-size: 45px;
+		line-height: 45px;
+		font-weight: bold;
+		margin-bottom: 20px;
+
+		@include media(sm) {
+			font-size: 55px;
+			line-height: 55px;
+		}
+
+		@include media(md) {
+			font-size: 75px;
+			line-height: 75px;
+		}
+
+		@include media(xl) {
+			font-size: 90px;
+			line-height: 90px;
+			margin-bottom: 30px;
+		}
+	}
+
+	&__text {
+		font-size: 14px;
+		line-height: 22px;
+		color: $color-grey-cc;
+		margin-bottom: 30px;
+
+		@include media(sm) {
+			font-size: 16px;
+			line-height: 26px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 65px;
+		}
+	}
+
+	&__address,
+	&__phone {
+		font-family: $font-family--secondary;
+		font-size: 24px;
+		line-height: 32px;
+		font-weight: bold;
+
+		@include media(xl) {
+			font-size: 32px;
+			line-height: 45px;
+		}
+	}
+
+	&__address {
+		margin-bottom: 15px;
+
+		@include media(xl) {
+			margin-bottom: 60px;
+		}
+	}
+
+	&__phone {
+		display: block;
+		margin-bottom: 24px;
+		color: $color-default-white;
+		@include transition(color);
+
+		@include hover {
+			color: $color-yellow;
+		}
+	}
+
+	&__email {
+		display: block;
+		font-size: 14px;
+		color: $color-grey-cc;
+		@include transition(color);
+
+		@include hover {
+			color: $color-yellow;
+		}
+
+		@include media(sm) {
+			font-size: 16px;
+		}
+	}
+
+	&__form-title {
+		font-family: $font-family--secondary;
+		font-size: 26px;
+		line-height: 34px;
+		font-weight: bold;
+		margin-bottom: 35px;
+
+		@include media(xl) {
+			font-size: 32px;
+			line-height: 45px;
+			margin-bottom: 58px;
+		}
+
+		span {
+			color: $color-yellow;
+		}
+	}
+
+	&__form {
+		label {
+			display: block;
+			width: 100%;
+			position: relative;
+
+			&.label-textarea {
+				height: 144px;
+			}
+
+			&:not(:first-of-type) {
+				margin-top: 30px;
+
+				@include media(lg) {
+					margin-top: 44px;
+				}
+			}
+		}
+
+		.line {
+			width: 0;
+			height: 1px;
+			background-color: $color-yellow;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			transition: width 0.3s linear;
+		}
+
+		input,
+		textarea {
+			width: 100%;
+			padding: 10px 20px;
+			border: none;
+			border-bottom: 1px solid rgba($color-default-white, 0.6);
+			background-color: transparent;
+			outline: none;
+			color: $color-default-white;
+			position: relative;
+
+			@include media(lg) {
+				padding: 15px 30px;
+			}
+
+			&::placeholder {
+				font-family: $font-family--secondary;
+				font-size: 16px;
+				color: $color-default-white;
+				opacity: 0.6;
+			}
+
+			@include hover {
+				border-color: $color-grey-cc;
+			}
+
+			&:focus {
+				color: $color-default-white;
+
+				&::placeholder {
+					opacity: 0;
+				}
+
+				+ .line {
+					width: 100%;
+				}
+			}
+		}
+
+		textarea {
+			height: 144px;
+			margin: 0;
+			resize: none;
+		}
+	}
+
+	&__submit {
+		font-family: $font-family--main;
+		font-size: 16px;
+		font-weight: 500;
+		margin-top: 55px;
+		padding: 17px 40px;
+	}
+}

@@ -1,0 +1,180 @@
+.services {
+	color: $color-default-black;
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@include media(xl) {
+			flex-direction: row;
+			align-items: flex-start;
+			padding-top: 50px;
+		}
+	}
+
+	&__left {
+		max-width: 300px;
+		width: 100%;
+		margin-bottom: 30px;
+
+		@include media(xl) {
+			margin-right: 165px;
+			margin-bottom: 0;
+		}
+
+		p {
+			margin: 0;
+			font-family: $font-family--secondary;
+			font-size: 18px;
+			line-height: 28px;
+			font-weight: bold;
+			text-transform: uppercase;
+			text-align: center;
+
+			@include media(xl) {
+				font-size: 20px;
+				line-height: 35px;
+				text-align: left;
+			}
+		}
+	}
+
+	&__digit {
+		margin-bottom: 15px;
+		font-family: $font-family--secondary;
+		font-size: 80px;
+		line-height: 90px;
+		font-weight: bold;
+		color: $color-yellow3;
+		position: relative;
+		text-align: center;
+
+		@include media(xl) {
+			margin-bottom: 27px;
+			font-size: 170px;
+			line-height: 195px;
+			text-align: left;
+		}
+
+		span {
+			font-size: 50px;
+			line-height: 50px;
+			position: absolute;
+			left: auto;
+			top: -15px;
+
+			@include media(xl) {
+				font-size: 80px;
+				line-height: 80px;
+				left: 119px;
+				top: -65px;
+			}
+		}
+	}
+
+	&__title {
+		font-family: $font-family--secondary;
+		font-size: 35px;
+		line-height: 40px;
+		font-weight: bold;
+		text-align: center;
+		margin-bottom: 35px;
+
+		@include media(md) {
+			font-size: 40px;
+			line-height: 45px;
+		}
+
+		@include media(lg) {
+			text-align: left;
+		}
+
+		@include media(xl) {
+			font-size: 48px;
+			line-height: 69px;
+			margin-bottom: 103px;
+		}
+
+		span {
+			color: $color-yellow3;
+		}
+	}
+
+	&__grid {
+		display: flex;
+		flex-wrap: wrap;
+
+		@include media(lg) {
+			margin: 0 -27px;
+		}
+	}
+
+	&__item {
+		width: 100%;
+		margin-bottom: 33px;
+
+		@include hover {
+			.services__link {
+				opacity: 1;
+			}
+		}
+
+		@include media(lg) {
+			width: calc(48.7% - 54px);
+			margin: 0 27px 33px;
+		}
+	}
+
+	&__item-title {
+		font-family: $font-family--secondary;
+		font-size: 22px;
+		font-weight: bold;
+		margin-bottom: 10px;
+
+		@include media(md) {
+			font-size: 25px;
+			margin-bottom: 18px;
+		}
+	}
+
+	&__item-text {
+		font-size: 14px;
+		line-height: 18px;
+		color: $color-base;
+		margin-bottom: 10px;
+
+		@include media(sm) {
+			font-size: 16px;
+			line-height: 26px;
+		}
+
+		@include media(md) {
+			margin-bottom: 18px;
+		}
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		font-size: 16px;
+		font-weight: 600;
+		color: $color-yellow3;
+		@include transition(opacity);
+
+		@include hover {
+			svg {
+				animation: link-arrow-hover 0.4s ease;
+			}
+		}
+
+		@include media(lg) {
+			opacity: 0;
+		}
+
+		svg {
+			fill: $color-yellow3;
+			margin-left: 16px;
+		}
+	}
+}

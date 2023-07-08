@@ -1,0 +1,16 @@
+mixin menu-dropdown(object)
+	- let array = isDark ? object.dark : object.white;
+	.menu__dropdown
+		ul.menu__sublist
+			each subitem in array
+				li.menu__subitem
+					if subitem.currentPage === currentPage
+						a.menu__sublink.menu__sublink--current= subitem.text
+					else
+						a.menu__sublink.animsition-link(href= subitem.url)= subitem.text
+			//-each subitem in object.dark
+				li.menu__subitem
+					if subitem.currentPage === currentPage
+						a.menu__sublink.menu__sublink--current= subitem.text
+					else
+						a.menu__sublink.animsition-link(href= subitem.url)= subitem.text

@@ -1,0 +1,234 @@
+.mobile-canvas {
+	$self: &;
+
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 1000;
+
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	min-height: 480px;
+	overflow: auto;
+	background-color: $color-default-white;
+	transform: translateX(100%);
+	padding: 20px 30px;
+
+	@include transition(transform);
+
+	@include media(sm) {
+		width: 56%;
+	}
+
+	@include media(md) {
+		min-height: 575px;
+		padding: 44px 60px;
+	}
+
+	@include media(md) {
+		padding: 40px 80px; //44px 80px;
+		max-width: 750px;
+	}
+
+	@include media(lg) {
+		position: static;
+		overflow: visible;
+		transform: translateX(0);
+		width: auto;
+		max-width: none;
+		min-height: 0;
+		padding: 0;
+		flex-direction: row;
+		transition: none;
+		background-color: transparent;
+	}
+
+	&--opened {
+		transform: translateX(0);
+	}
+
+	&--social {
+		#{$self}__social {
+			@include media(lg) {
+				display: flex;
+			}
+		}
+	}
+
+	&__wrapper {
+		//max-height: //280px;
+		//height: 54vh; //330px;
+		margin-top: 50px;
+		margin-bottom: 20px;
+		padding: 6px 0;
+		overflow: auto;
+
+		@include media(lg) {
+			//height: 54.56vh; //330px;
+			margin-top: 10.7vh;
+		}
+	}
+
+	&__nav {
+		margin-top: 50px;
+		margin-bottom: 20px;
+
+		@include media-custom-height(610px) {
+			margin-top: 60px;
+		}
+
+		@include media(lg) {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+
+	&__bottom {
+		margin-top: auto;
+
+		@include media(lg) {
+			margin-top: 0;
+			margin-left: auto;
+		}
+	}
+
+	&__lang-switcher {
+		@include media(lg) {
+			display: none;
+		}
+	}
+
+	&__copy {
+		margin-bottom: 16px;
+
+		@include text(14px, 1.71, $color-grey);
+		letter-spacing: 0.015em;
+
+		@include media(lg) {
+			display: none;
+			margin-bottom: 4.44vh; //48px;
+		}
+
+		span {
+			color: $color-default-black;
+		}
+	}
+
+	&__phone {
+		display: none;
+
+		@include media(lg) {
+			display: inline;
+
+			@include text(16px, 1.25, $color-default-black);
+			font-weight: 600;
+
+			@include transition(color);
+
+			&:hover,
+			&:focus {
+				outline: none;
+				color: $color-yellow;
+			}
+
+			&:active {
+				opacity: 0.7;
+			}
+		}
+	}
+
+	&__list {
+		@include list-reset;
+	}
+
+	&__item {
+		margin-bottom: 20px; //32px;
+
+		@include media(lg) {
+			margin-bottom: 32px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&--current {
+			#{$self}__link {
+				color: $color-default-black;
+			}
+		}
+	}
+
+	&__link {
+		@include text(24px, 1, $color-grey); //36
+		font-weight: 600;
+
+		@include transition(color);
+
+		@include media(lg) {
+			font-size: 36px;
+		}
+
+		&:hover,
+		&:focus {
+			outline: none;
+			color: $color-default-black;
+		}
+
+		&:active {
+			opacity: 0.7;
+		}
+	}
+
+	&__close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		display: flex;
+		justify-content: center;
+		width: 48px;
+		height: 48px;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		appearance: none;
+		cursor: pointer;
+
+		@include media(md) {
+			top: 28px;
+			right: 68px;
+		}
+
+		@include media(lg) {
+			display: none;
+		}
+
+		svg {
+			fill: $color-default-black;
+			align-self: center;
+
+			@include transition(fill);
+		}
+
+		&:hover,
+		&:focus {
+			outline: none;
+
+			svg {
+				fill: $color-yellow;
+			}
+		}
+
+		&:active {
+			opacity: 0.7;
+		}
+	}
+
+	&__social {
+		@include media(lg) {
+			display: none;
+		}
+	}
+}

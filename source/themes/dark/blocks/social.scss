@@ -1,0 +1,16 @@
+.social {
+	$self: &;
+
+	&__link {
+		svg {
+			fill: $color-default-white;
+		}
+
+		&:hover,
+		&:focus {
+			svg {
+				fill: $color-yellow;
+			}
+		}
+	}
+}

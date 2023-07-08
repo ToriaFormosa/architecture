@@ -1,0 +1,31 @@
+.services-provided {
+	&__column {
+		margin-bottom: 48px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@include media(md) {
+			margin-bottom: 0;
+		}
+
+		&-heading {
+			color: $color-default-white;
+		}
+	}
+
+	&__icon {
+		svg {
+			fill: $color-default-white;
+		}
+	}
+
+	&__link {
+		color: $color-default-white;
+
+		svg {
+			fill: $color-default-white;
+		}
+	}
+}

@@ -1,0 +1,19 @@
+.preview-card {
+	$self: &;
+
+	&__content {
+		background-color: $color-dark;
+	}
+
+	&__date,
+	&__heading,
+	&__btn {
+		color: $color-default-white;
+	}
+
+	&__btn {
+		svg {
+			fill: $color-default-white;
+		}
+	}
+}

@@ -1,0 +1,43 @@
+html {
+	::-webkit-scrollbar {
+		width: 10px;
+		height: 10px;
+	}
+
+	::-webkit-scrollbar-button {
+		display: none;
+	}
+
+	::-webkit-scrollbar-track {
+	}
+
+	::-webkit-scrollbar-track-piece {
+		//background-color: $color-grey6;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: $color-dark;
+		border-radius: none;
+	}
+
+	::-webkit-scrollbar-corner {
+		background-color: #999;
+	}
+
+	::-webkit-resizer {
+		background-color: #666;
+	}
+}
+
+body {
+	background-color: $color-dark;
+	color: $color-grey8;
+}
+
+main {
+	background-color: $color-dark;
+}
+
+.swiper-container-horizontal > .swiper-scrollbar .swiper-scrollbar-drag {
+	background-color: $color-default-white;
+}

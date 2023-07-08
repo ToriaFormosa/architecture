@@ -1,0 +1,207 @@
+.card {
+	$self: &;
+
+	&--team {
+		#{$self}__heading {
+			visibility: hidden;
+			color: $color-default-white !important;
+		}
+
+		#{$self}__text {
+			color: $color-default-white !important;
+		}
+
+		&:focus {
+			#{$self}__content {
+				background-color: rgba($color-dark, 0.95) !important;
+			}
+		}
+
+		@include hover {
+			#{$self}__heading {
+				visibility: visible;
+			}
+
+			#{$self}__content {
+				background-color: rgba($color-dark, 0.95) !important;
+			}
+		}
+		.social {
+			&__link {
+				svg {
+					fill: $color-default-white;
+				}
+			}
+		}
+	}
+
+	&--transparent {
+		border: solid 1px $color-default-white;
+
+		@include transition(border-color);
+
+		&:focus {
+			border-color: $color-yellow;
+		}
+
+		@include hover {
+			border-color: $color-yellow;
+
+			#{$self}__text {
+				position: static;
+			}
+
+			#{$self}__heading {
+			}
+		}
+	}
+
+	&--news {
+		#{$self}__content {
+			background-color: $color-dark;
+		}
+
+		&:hover,
+		&:focus {
+			#{$self}__content {
+				background-color: $color-dark;
+			}
+
+			#{$self}__heading {
+				visibility: visible;
+				color: $color-default-white;
+			}
+			#{$self}__text {
+				color: $color-default-white;
+			}
+			#{$self}__date {
+				color: $color-default-white;
+			}
+		}
+
+		@include hover {
+			&:hover,
+			&:focus {
+				#{$self}__content {
+					background-color: $color-dark;
+				}
+
+				#{$self}__heading {
+					color: $color-default-white;
+				}
+			}
+		}
+
+		#{$self} {
+			&__content {
+				background-color: $color-dark;
+			}
+
+			&__heading {
+				color: $color-default-white;
+			}
+		}
+	}
+
+	&--news-masonry {
+		&:hover,
+		&:focus {
+			#{$self}__content {
+				transform: none;
+				border-color: $color-yellow;
+			}
+
+			#{$self}__date {
+				transform: none;
+			}
+
+			#{$self}__heading {
+				transform: none;
+			}
+
+			#{$self}__text {
+				transform: none;
+			}
+
+			#{$self}__link {
+				color: $color-yellow;
+
+				svg {
+					fill: $color-yellow;
+				}
+			}
+		}
+
+		#{$self} {
+			&__content {
+				@include media(lg) {
+					background-color: lighten($color-dark, 5%);
+				}
+			}
+
+			&__date,
+			&__heading,
+			&__text {
+				color: $color-default-white;
+				visibility: visible;
+			}
+
+			&__link {
+				color: $color-yellow;
+
+				svg {
+					fill: $color-yellow;
+				}
+			}
+		}
+	}
+
+	&:hover,
+	&:focus {
+		outline: none;
+
+		#{$self}__content {
+			background-color: rgba($color-yellow, 0.95);
+		}
+
+		#{$self}__tag {
+			color: $color-default-black;
+		}
+
+		#{$self}__heading {
+			position: static;
+			color: $color-default-black;
+			transform: translateY(0);
+			transition: transform 0.5s ease;
+		}
+
+		#{$self}__text {
+			opacity: 1;
+			transform: translateY(0);
+
+			transition: transform 0.4s 0.2s ease, opacity 0.4s 0.2s ease;
+		}
+
+		#{$self}__bottom {
+			opacity: 1;
+		}
+	}
+
+	&__tag {
+		margin-bottom: 4px;
+		color: $color-default-white;
+		transform: translateY(-20px);
+	}
+
+	&__send-text {
+		color: $color-default-white;
+	}
+
+	&__text {
+		//@include text(16px, 1.3125, $color-default-black);
+	}
+
+	&__link {
+		//@include text(20px, 1.15, $color-default-black);
+	}
+}

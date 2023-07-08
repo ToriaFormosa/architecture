@@ -1,0 +1,190 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Single post 2 Dark';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let isDark = true;
+	- let currentPage = 3.12; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 3; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+	article.article.article--news
+		header.article__header
+			.container
+				a.article__tag(href='#', target='_blank') interior
+				h1.article__heading.heading.heading--size-large House, Near  Wrocklow
+		.article__main.article__main--width-full.container
+			.post-sb-page__main-pic
+				img(src="img/picture/news/single-post/bg-post.jpg", srcset="img/picture/news/single-post/bg-post@2x.jpg", alt="")
+		.post-sb-page__wrapper
+			// Post
+			section.post-sb
+				.article__main.container
+					.post-sb__wrapper
+						.post-sb__content
+							.post-sb__date <a href="#" class="author">Admin</a> on Jule 3, 2020
+							.post-sb__title To mark the first UK show of artist Henri Barande, graphic <a href="">designer Paul</a>
+							.post-sb__text
+								p This response is important for our ability to learn from mistakes, but it alsogives rise to self-criticism, because it is part of the
+									|  threat-protection system. In other words, what keeps us safe can go too far, and keep us too safe. In fact it can trigger self-censoring.
+								p One touch of a red-hot stove is usually all we need to avoid that kind of discomfort in the future. The same is true as we experience
+									|  the emotional sensation of stress from our first instances of social rejection or ridicule. We quickly learn to fear and thus
+									|  automatically avoid potentially stressful situations of all kinds, including the most common of all:
+							.post-sb__content-pic
+								img(src="img/picture/news/single-post/item-1.jpg", srcset="img/picture/news/single-post/item-1@2x.jpg", alt="")
+							.post-sb__subtitle Methods for Everyone
+							.post-sb__text
+								p Everything along the way, to and from, fascinated her: every pebble, ant, stick, leaf, blade of grass, and crack in the sidewalk was
+									|  something to be picked up, looked at, tasted, smelled, and shaken. Everything was interesting to her. She knew nothing. I knew
+									|  everything…been there, done that. She was in the moment, I was in the past. She was mindful. I was mindless.
+								p One touch of a red-hot stove is usually all we need to avoid that kind of discomfort in the future. The same is true as we experience
+									|  the emotional sensation of stress from our first instances of social rejection or ridicule. We quickly learn to fear and thus
+									|  automatically avoid potentially stressful situations of all kinds, including the most common of all: making mistakes.
+
+							include modules/quote.pug
+
+							.post-sb__gallery
+								.post-sb__gallery-col.col-12.col-md-6
+									img.small(src="img/picture/news/single-post/item-2.jpg", srcset="img/picture/news/single-post/item-2@2x.jpg", alt="")
+									img.small(src="img/picture/news/single-post/item-3.jpg", srcset="img/picture/news/single-post/item-3@2x.jpg", alt="")
+								.post-sb__gallery-col.col-12.col-md-6
+									img(src="img/picture/news/single-post/item-4.jpg", srcset="img/picture/news/single-post/item-4@2x.jpg", alt="")
+							.post-sb__subtitle Challenge
+							.post-sb__text
+								p Everything along the way, to and from, fascinated her: every pebble, ant, stick, leaf, blade of grass, and crack in the sidewalk was
+									|  something to be picked up, looked at, tasted, smelled, and shaken. Everything was interesting to her. She knew nothing. I knew
+									|  everything…been there, done that. She was in the moment, I was in the past. She was mindful. I was mindless.
+								p One touch of a red-hot stove is usually all we need to avoid that kind of discomfort in the future. The same is true as we experience
+									|  the emotional sensation of stress from our first instances of social rejection or ridicule. We quickly learn to fear and thus
+									|  automatically avoid potentially stressful situations of all kinds, including the most common of all: making mistakes.
+
+							.post-sb__bottom
+
+								// Tags
+								.post-sb__tags <span>Tags:</span> <a href="#" target="_blank">Inspiration</a>, <a href="#" target="_blank">Workspace</a>, <a href="#" target="_blank">Minimal</a>, <a href="#" target="_blank">Decoation</a>
+
+								// Social
+								.post-sb__socials
+									span Share:
+									ul.social.post-sb__social
+										li.social__item
+											a.social__link(href="#", target="_blank")
+												+icon('facebook')(width="18", height="21")
+										li.social__item
+											a.social__link(href="#", target="_blank")
+												+icon('twitter')(width="23", height="21")
+										li.social__item
+											a.social__link(href="#", target="_blank")
+												+icon('pinterest')(width="23", height="21")
+
+
+						include modules/sidebar
+				// Related posts
+				section.post-related.post-sb__related
+					.post-related__container
+						.post-related__title
+							span Related posts
+							a(href='#', target='_blank')
+								| View all news
+								+icon('chevron-right')(width="20", height="20")
+						.post-related__wrapper
+							.post-related__item.col-12.col-xl-4
+								.card.card--small.card--masonry.card--news
+									.card__image
+										img(src="img/picture/news/single-post/related-1.jpg", srcset="img/picture/news/single-post/related-1@2x.jpg", alt="")
+									.card__content
+										.card__date Jule 03, 2020
+										h3.card__heading Discover Interior
+										.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such
+										.card__bottom
+											a.card__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+												| Learn more
+												+icon('chevron-right')(width="20", height="20")
+							.post-related__item.col-12.col-xl-4
+								.card.card--small.card--masonry.card--news
+									.card__image
+										img(src="img/picture/news/single-post/related-2.jpg", srcset="img/picture/news/single-post/related-2@2x.jpg", alt="")
+									.card__content
+										.card__date Jule 03, 2020
+										h3.card__heading Discover Interior
+										.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such
+										.card__bottom
+											a.card__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+												| Learn more
+												+icon('chevron-right')(width="20", height="20")
+							.post-related__item.col-12.col-xl-4
+								.card.card--small.card--masonry.card--news
+									.card__image
+										img(src="img/picture/news/single-post/related-3.jpg", srcset="img/picture/news/single-post/related-3@2x.jpg", alt="")
+									.card__content
+										.card__date Jule 03, 2020
+										h3.card__heading Discover Interior
+										.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such
+										.card__bottom
+											a.card__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+												| Learn more
+												+icon('chevron-right')(width="20", height="20")
+
+				.article__main.container
+					// Comments
+					section.comment.post-sb__comment
+						.comment__title Comments
+						.comment__wrapper
+							.comment-item
+								.comment-item__photo
+									img(src="img/picture/news/single-post/comment-1.jpg", srcset="img/picture/news/single-post/comment-1@2x.jpg", alt="")
+								.comment-item__content
+									.comment-item__top
+										.comment-item__name Hayley
+										.comment-item__sent Jul 03, 2020 at 15 hours ago
+									.comment-item__text Everything along the way, to and from, fascinated her: every pebble, ant, stick, leaf, blade of grass, and crack in the sidewalk was something to be picked up
+									button.comment-item__reply Reply
+							.comment-item.comment-item--replyed
+								.comment-item__photo
+									img(src="img/picture/news/single-post/comment-2.jpg", srcset="img/picture/news/single-post/comment-2@2x.jpg", alt="")
+								.comment-item__content
+									.comment-item__top
+										.comment-item__name Denzel
+										.comment-item__sent Jul 03, 2020 at 15 hours ago
+									.comment-item__text Everything along the way, to and from, fascinated her: every pebble, ant, stick, leaf, blade of grass
+									button.comment-item__reply Reply
+							.comment-item
+								.comment-item__photo
+									img(src="img/picture/news/single-post/comment-3.jpg", srcset="img/picture/news/single-post/comment-3@2x.jpg", alt="")
+								.comment-item__content
+									.comment-item__top
+										.comment-item__name Amanda
+										.comment-item__sent Jul 03, 2020 at 15 hours ago
+									.comment-item__text Everything along the way, to and from, fascinated her: every pebble, ant, stick, leaf, blade of grass, and crack in the sidewalk was something to be picked up
+									button.comment-item__reply Reply
+
+					// Send comment
+					form.comment-form.js-form-validate(action='php/mail.php', method='POST')
+						.comment-form__title Post a comment
+						.comment-form__inputs-group
+							.comment-form__field-wrapper
+								label.field.comment-form__field
+									input(type="text", name="name", placeholder="Name")
+								.field-error(style='display: none')
+							.comment-form__field-wrapper
+								label.field.comment-form__field
+									input(type="email", name="email", placeholder="Email *", required)
+								.field-error(style='display: none')
+
+						label.field.comment-form__field
+							textarea(name="message", placeholder="Message *", required)
+						.field-error(style='display: none')
+						button.btn.comment-form__btn(type='submit') post comment
+
+
+
+
+
+
+
+
+
+block footer
+	include modules/footer

@@ -1,0 +1,34 @@
+.footer-intro {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	width: 100%;
+	max-width: 540px;
+	margin: 0 auto 60px;
+	padding: 80px 15px;
+	background-color: $color-smoky;
+
+	@include media(md) {
+		max-width: 720px;
+	}
+
+	@include media(lg) {
+		max-width: 960px;
+	}
+
+	@include media(xl) {
+		max-width: 1800px;
+		padding: 124px 15px;
+	}
+
+	&__logo {
+		margin-bottom: 48px;
+	}
+
+	&__copy {
+		font-family: $font-family--secondary;
+		color: $color-default-black;
+		text-align: center;
+	}
+}

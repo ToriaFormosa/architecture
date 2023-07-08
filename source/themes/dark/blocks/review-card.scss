@@ -1,0 +1,10 @@
+.review-card {
+	&__name {
+		color: $color-default-white;
+	}
+
+	&__post {
+		margin-bottom: 32px;
+		color: $color-default-white;
+	}
+}

@@ -1,0 +1,68 @@
+.menu-toggle {
+	$self: &;
+
+	position: relative;
+	display: block;
+	width: 25px;
+	height: 12px;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	appearance: none;
+	cursor: pointer;
+
+	@include transition(transform);
+
+	&--white {
+		&::before,
+		&::after {
+			border-top: solid 3px $color-default-white;
+		}
+	}
+
+	&--opened {
+		&::before {
+			transform: translateY(2px);
+		}
+		&::after {
+			transform: translateY(-2px);
+		}
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		width: 100%;
+		border-top: solid 3px $color-default-black;
+
+		transition: border-top-color $default-transition-settings,
+			transform $default-transition-settings;
+	}
+
+	&::before {
+		top: 0;
+	}
+
+	&::after {
+		bottom: 0;
+	}
+
+	&--white {
+		&::before,
+		&::after {
+			border-top: solid 3px $color-default-white;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		outline: none;
+
+		&::before,
+		&::after {
+			border-top-color: $color-yellow;
+		}
+	}
+}

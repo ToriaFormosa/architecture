@@ -1,0 +1,38 @@
+// Header mobile menu
+section.menu
+	.menu__inner
+		button.menu__close(type="button")
+			+icon('close')(width="24", height="24")
+			span.visually-hidden Close menu
+
+		// Lang switcher
+		ul.menu__lang-switcher.lang-switcher.lang-switcher--upper.lang-switcher--menu
+			li.lang-switcher__item
+				a.lang-switcher__link.lang-switcher__link--current Eng
+			li.lang-switcher__item
+				a.lang-switcher__link(href="#") Fra
+			li.lang-switcher__item
+				a.lang-switcher__link(href="#") Ger
+		.menu__wrapper
+			ul.menu__list
+				- let MENU2 = isDark ? MAIN_MENU_DARK : MAIN_MENU;
+				each item, index in MENU2
+					if item.currentSection === currentSection
+						li.menu__item.menu__item--current
+							if item.submenu
+								a.menu__link.__js_menu-dropdown-link= item.text
+								+menu-dropdown-home(item.submenu)
+							else
+								a.menu__link= item.text
+					else
+						li.menu__item
+							if item.submenu
+								a.menu__link.__js_menu-dropdown-link(href= item.url)= item.text
+								+menu-dropdown-home(item.submenu)
+							else
+								a.menu__link.animsition-link(href= item.url)= item.text
+
+		.menu__bottom
+			.menu__copy © 2021 <span>Liarch.</span> All Rights Reserved. <br>
+				| Development by <span>Paul Studio</span>
+			//+social('menu__social')

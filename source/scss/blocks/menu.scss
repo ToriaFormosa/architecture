@@ -1,0 +1,222 @@
+.menu {
+	$self: &;
+
+	position: fixed;
+	top: 0;
+	//bottom: 0;
+	right: 0;
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	min-height: 480px;
+	overflow: auto;
+	//max-width: 750px;
+	background-color: $color-default-white;
+	background-repeat: no-repeat;
+	background-position: right 0 bottom 0;
+	background-size: auto 100%;
+	background-image: url("../img/menu-bg.png");
+	transform: translateX(100%);
+
+	@include transition(transform);
+
+	@include media(sm) {
+		width: 56%;
+	}
+
+	@include media(lg) {
+		max-width: 750px;
+	}
+
+	&--opened {
+		transform: translateX(0);
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		padding: 20px 30px;
+
+		@include media(md) {
+			padding: 44px 60px;
+		}
+
+		@include media(lg) {
+			padding: 80px 100px; //44px 80px;
+		}
+	}
+
+	&__wrapper {
+		//max-height: //280px;
+		//height: 54vh; //330px;
+		margin-top: 50px;
+		margin-bottom: 20px;
+		padding: 6px 0;
+		overflow: auto;
+
+		@include media(lg) {
+			//height: 54.56vh; //330px;
+			margin-top: 10.7vh;
+		}
+	}
+
+	&__bottom {
+		margin-top: auto;
+	}
+
+	&__copy {
+		margin-bottom: 16px;
+
+		@include text(14px, 1.71, $color-grey);
+		letter-spacing: 0.015em;
+
+		@include media(lg) {
+			margin-bottom: 4.44vh; //48px;
+		}
+
+		span {
+			color: $color-default-black;
+		}
+	}
+
+	&__dropdown {
+		display: none;
+	}
+
+	&__list {
+		@include list-reset;
+	}
+
+	&__sublist {
+		@include list-reset;
+	}
+
+	&__subitem {
+		display: block;
+		margin-top: 16px;
+		line-height: 1 !important;
+
+		&:first-child {
+			margin-top: 20px; //32px;
+
+			@include media(lg) {
+				margin-top: 32px;
+			}
+		}
+	}
+
+	&__sublink {
+		display: inline-block;
+		vertical-align: top;
+		@include text(16px, 1, $color-grey);
+		@include transition(color);
+
+		&--current {
+			color: $color-default-black;
+			pointer-events: none;
+
+			&:hover,
+			&:focus {
+				color: $color-default-black !important;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			outline: none;
+			color: $color-default-black !important;
+		}
+
+		&:active {
+			opacity: 0.7;
+		}
+	}
+
+	&__item {
+		margin-bottom: 20px; //32px;
+
+		@include media(lg) {
+			margin-bottom: 32px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&--current {
+			#{$self}__link {
+				color: $color-default-black;
+			}
+		}
+	}
+
+	&__link {
+		@include text(24px, 1, $color-grey); //36
+		font-weight: 600;
+
+		@include transition(color);
+
+		@include media(lg) {
+			font-size: 36px;
+		}
+
+		&:hover,
+		&:focus {
+			outline: none;
+			color: $color-default-black;
+		}
+
+		&:active {
+			opacity: 0.7;
+		}
+	}
+
+	&__close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		display: flex;
+		justify-content: center;
+		width: 48px;
+		height: 48px;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		appearance: none;
+		cursor: pointer;
+
+		@include media(md) {
+			top: 32px;
+			right: 48px;
+		}
+
+		@include media(md) {
+			top: 68px;
+			right: 88px;
+		}
+
+		svg {
+			fill: $color-default-black;
+			align-self: center;
+
+			@include transition(fill);
+		}
+
+		&:hover,
+		&:focus {
+			outline: none;
+
+			svg {
+				//fill: $color-orange;
+			}
+		}
+
+		&:active {
+			opacity: 0.7;
+		}
+	}
+
+	&__social {
+	}
+}

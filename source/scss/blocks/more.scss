@@ -1,0 +1,31 @@
+.more {
+	display: flex;
+	align-items: center;
+	font-family: $font-family--secondary;
+
+	@include text(16px, 1.3125, $color-grey2);
+	font-weight: 600;
+
+	@include transition(color);
+
+	svg {
+		margin-left: 16px;
+
+		fill: $color-grey2;
+		@include transition(fill);
+	}
+
+	&:hover,
+	&:focus {
+		outline: none;
+		color: $color-default-black;
+
+		svg {
+			fill: $color-default-black;
+		}
+	}
+
+	&:active {
+		opacity: 0.7;
+	}
+}

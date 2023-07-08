@@ -1,0 +1,47 @@
+include _vars.pug
+block variables
+
+include ../mixins/mixins.pug
+
+doctype html
+- let htmlModClass = ' ' + htmlClass ? htmlClass : '';
+html.no-js(lang="en", class= htmlModClass)
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1")
+
+		// CSS
+		link(rel='apple-touch-icon' sizes='60x60' href='favicons/apple-touch-icon.png')
+		link(rel='icon' type='image/png' sizes='32x32' href='favicons/favicon-32x32.png')
+		link(rel='icon' type='image/png' sizes='16x16' href='favicons/favicon-16x16.png')
+		link(rel='manifest' href='favicons/site.webmanifest')
+		link(rel='mask-icon' href='favicons/safari-pinned-tab.svg' color='#5bbad5')
+		meta(name='msapplication-TileColor' content='#da532c')
+		meta(name='theme-color' content='#ffffff')
+		link(rel="stylesheet", href="css/bootstrap-grid.css")
+
+		if isRevolution
+			link(rel="stylesheet", href="css/revolution.css")
+		link(rel="stylesheet", href="css/main.css")
+
+		if isDark
+			link(rel="stylesheet", href="css/theme-dark.css")
+		if isIntro
+			link(rel="stylesheet", href="css/intro-page.css")
+
+		title= pageTitle
+
+	- let modClass = bodyModClass ? ' ' + bodyModClass : '';
+
+	body(class="webpage" + modClass)
+		div(style="display: none")
+			include ../../../build/img/sprite.svg
+		.animsition
+			block header
+			main
+				block content
+			block footer
+			//-include ../modules/video
+			include ../modules/modal
+
+		include _bottom_js

@@ -1,0 +1,77 @@
+.page-404 {
+	background-image: url("../img/bg-404.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	@include retina {
+		background-image: url("../img/bg-404@2x.jpg");
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		min-height: calc(100vh - 112px);
+		padding: 60px 10px;
+		text-align: center;
+
+		@include media(xl) {
+			padding: 140px 0;
+		}
+	}
+
+	&__num {
+		font-family: $font-family--secondary;
+		@include text(65px, 65px, $color-default-black);
+		font-weight: bold;
+		margin-bottom: 30px;
+
+		@include media(lg) {
+			font-size: 150px;
+			line-height: 150px;
+			margin-bottom: 46px;
+		}
+	}
+
+	&__title {
+		font-family: $font-family--secondary;
+		@include text(18px, 24px, $color-default-black);
+		font-weight: bold;
+		margin-bottom: 36px;
+
+		@include media(md) {
+			font-size: 20px;
+			line-height: 28px;
+		}
+
+		@include media(lg) {
+			font-size: 25px;
+			line-height: 35px;
+		}
+	}
+
+	&__text {
+		@include text(16px, 26px, $color-grey-76);
+		margin-bottom: 40px;
+
+		a {
+			color: $color-yellow;
+
+			@include transition(color);
+
+			&:focus {
+				outline: none;
+				color: $color-default-black;
+			}
+
+			@include hover {
+				color: $color-default-black;
+			}
+		}
+	}
+
+	&__search {
+		max-width: 347px;
+	}
+}

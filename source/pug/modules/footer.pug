@@ -1,0 +1,45 @@
+footer.footer.__js_fixed-footer
+	.footer__inner.container
+		.row
+			.footer__column.col-12.col-sm
+				+logo(isHome, 'footer__logo logo--borderless')
+
+			// Copyrights
+			.footer__column.col-12.col-lg.order-2.order-lg-0
+				.footer__copyright © Larson. 2020 <br> All Rights Resevered
+
+
+				// Footer menu
+			.footer__column.col-6.col-sm
+				ul.footer__column-menu
+					each item in FOOTER_MENU_1
+						if item.currentPage === currentPage
+							li.footer__column-item.footer__column-item--current
+								a.footer__column-link= item.text
+						else
+							li.footer__column-item
+								a.footer__column-link.animsition-link(href= item.url)= item.text
+
+			// Footer menu
+			.footer__column.col-6.col-sm
+
+				ul.footer__column-menu
+					each item in FOOTER_MENU_2
+						if item.currentPage === currentPage
+							li.footer__column-item.footer__column-item--current
+								a.footer__column-link= item.text
+						else
+							li.footer__column-item
+								a.footer__column-link.animsition-link(href= item.url)= item.text
+			.footer__column.col-12.col-lg-1.order-md-1.order-lg-0
+				ul.footer__lang-switcher.lang-switcher.lang-switcher--footer
+					li.lang-switcher__item
+						a.lang-switcher__link.lang-switcher__link--current Eng
+					li.lang-switcher__item
+						a.lang-switcher__link(href="#") Fra
+					li.lang-switcher__item
+						a.lang-switcher__link(href="#") Ger
+			.footer__column.footer__column.col-12.col-md.col-lg-3.col-xl-2
+				+social('footer__social', ['facebook', 'twitter', 'google-plus', 'linkedin-original'])
+
+

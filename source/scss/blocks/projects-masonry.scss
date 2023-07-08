@@ -1,0 +1,18 @@
+.projects-masonry {
+	list-style: none;
+	padding: 0;
+
+	&--pt {
+		padding-top: 18px;
+	}
+
+	&__inner {
+		@include media(xl) {
+			max-width: $width--full;
+		}
+	}
+
+	&__item {
+		margin-bottom: 30px;
+	}
+}

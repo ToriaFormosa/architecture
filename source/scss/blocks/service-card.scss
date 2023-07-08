@@ -1,0 +1,218 @@
+.service-card {
+	$self: &;
+	counter-increment: services;
+
+	&--reverse {
+		#{$self}__inner {
+			@include media(md) {
+				flex-direction: row-reverse;
+			}
+		}
+
+		#{$self}__left {
+			&::before {
+				left: auto;
+				right: 0;
+				border-left: none;
+				border-right: solid 4px $color-yellow;
+			}
+
+			@include media(md) {
+				&::after {
+					right: 32px;
+				}
+			}
+
+			@include media(lg) {
+				padding: 64px 48px 64px 96px;
+
+				&::after {
+					right: 48px;
+				}
+			}
+		}
+
+		#{$self}__detail {
+			left: auto;
+			right: 0;
+
+			@include media(md) {
+				border-right: none;
+				border-left: solid 4px $color-default-white;
+
+				@include hover {
+					border-color: $color-yellow;
+				}
+			}
+		}
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+
+		@include media(md) {
+			flex-direction: row;
+			padding-bottom: 150px;
+		}
+
+		@include media(lg) {
+			padding-bottom: 116px;
+		}
+	}
+
+	&__left {
+		position: relative;
+		padding-left: 56px;
+
+		&::after {
+			content: "0" counter(services) ".";
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			font-family: $font-family--secondary;
+
+			@include text(48px, 1, $color-grey6);
+			font-weight: 700;
+			transform: rotate(-90deg);
+			transform-origin: 33% 50%;
+
+			@include media(md) {
+				left: 24px;
+				transform: rotate(0);
+			}
+		}
+
+		@include media(md) {
+			padding: 32px;
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 45%;
+				height: 100%;
+
+				border-top: solid 4px $color-yellow;
+				border-left: solid 4px $color-yellow;
+				pointer-events: none;
+			}
+
+			&::after {
+				left: 32px;
+			}
+		}
+
+		@include media(lg) {
+			display: flex;
+			align-items: center;
+			padding: 64px 96px 64px 48px;
+
+			&::after {
+				left: 48px;
+				font-size: 64px;
+			}
+		}
+
+		@include media(xl) {
+			padding-top: 100px;
+			padding-bottom: 100px;
+
+			&::after {
+				font-size: 100px;
+			}
+		}
+	}
+
+	&__right {
+		order: -1;
+
+		@include media(md) {
+			position: relative;
+			width: 60%;
+			flex-shrink: 0;
+			order: 0;
+		}
+
+		@include media(xl) {
+			width: 100%;
+			max-width: 635px;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&__text {
+	}
+
+	&__detail {
+		width: 80%;
+		max-width: 394px;
+		padding: 20px 0;
+
+		@include transition(border-color);
+
+		@include media(md) {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+
+			padding: 24px;
+			border-top: solid 4px $color-default-white;
+			border-right: solid 4px $color-default-white;
+
+			background-color: $color-default-white;
+			transform: translateY(150px);
+		}
+
+		@include media(lg) {
+			transform: translateY(116px);
+		}
+
+		@include hover {
+			border-color: $color-yellow;
+		}
+	}
+
+	&__tags {
+		margin: 0 0 10px;
+	}
+
+	&__heading {
+		margin: 0 0 24px;
+		font-family: $font-family--secondary;
+
+		@include text(25px, 1.4, $color-default-black);
+		font-weight: 700;
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+
+		@include text(16px, 1.5, $color-yellow);
+		font-weight: 600;
+
+		@include transition(color);
+
+		svg {
+			margin-left: 8px;
+
+			fill: $color-yellow;
+			@include transition(fill);
+		}
+
+		@include hover {
+			color: $color-default-black;
+
+			svg {
+				fill: $color-default-black;
+			}
+		}
+	}
+}

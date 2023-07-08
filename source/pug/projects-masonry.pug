@@ -1,0 +1,124 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Projects Masonry';
+	- let isHome = true; //- Если true то логотип не будет ссылкой
+	- let isDark = false;
+	- let currentPage = 2.03; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+	article.article
+		header.article__header
+			.container
+				h1.article__heading.heading.heading--size-large Projects
+
+				// Filter projects
+				.article__filter.filter
+					each item in ['all', 'interior', 'architecture', 'building', 'exterior']
+						- let filterVal = item === 'all' ? '*' : '.__js_' + item;
+						- let activeClass = item === 'all' ? ' filter__item--active' : '';
+						button(class="filter__item" + activeClass + ' __js_filter-btn', type="button", data-filter= filterVal)= item
+		.article__main.container
+			ul.projects-masonry.row.__js_projects-grid
+				li.projects-masonry__item.col-12.col-md-6.col-xl-4.__js_masonry-item
+					a.card.card--small.card--masonry(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+						.card__image
+							img(src="img/picture/projects/masonry/1.jpg", srcset="img/picture/projects/masonry/1@2x.jpg", width="350", height="350", alt="")
+						.card__content
+							h3.card__heading Villa <br>In <br>London
+							.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such
+							.card__bottom
+								span.card__link
+									| See project
+									+icon('chevron-right')(width="20", height="20")
+
+				li.projects-masonry__item.col-12.col-md-6.col-xl-4.__js_masonry-item.__js_architecture
+					a.card.card--small.card--masonry(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+						.card__image
+							img(src="img/picture/projects/masonry/2.jpg", srcset="img/picture/projects/masonry/2@2x.jpg", width="350", height="350", alt="")
+						.card__content
+							h3.card__heading Villa <br>In <br>London
+							.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such
+							.card__bottom
+								span.card__link
+									| See project
+									+icon('chevron-right')(width="20", height="20")
+
+				li.projects-masonry__item.col-12.col-md-6.col-xl-4.__js_masonry-item.__js_building
+					a.card.card--small.card--masonry(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+						.card__image
+							img(src="img/picture/projects/masonry/3.jpg", srcset="img/picture/projects/masonry/3@2x.jpg", width="350", height="350", alt="")
+						.card__content
+							h3.card__heading Villa <br>In <br>London
+							.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such
+							.card__bottom
+								span.card__link
+									| See project
+									+icon('chevron-right')(width="20", height="20")
+
+				li.projects-masonry__item.col-12.col-xl-8.__js_masonry-item.__js_interior
+					a.card.card--small.card--masonry(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+						.card__image
+							img(src="img/picture/projects/masonry/4.jpg", srcset="img/picture/projects/masonry/4@2x.jpg", width="350", height="350", alt="")
+						.card__content
+							h3.card__heading Villa <br>In <br>London
+							.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such
+							.card__bottom
+								span.card__link
+									| See project
+									+icon('chevron-right')(width="20", height="20")
+
+				li.projects-masonry__item.col-12.col-md-6.col-xl-4.__js_masonry-item.__js_building
+					a.card.card--small.card--masonry(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+						.card__image
+							img(src="img/picture/projects/masonry/5.jpg", srcset="img/picture/projects/masonry/5@2x.jpg", width="350", height="350", alt="")
+						.card__content
+							h3.card__heading Villa <br>In <br>London
+							.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such
+							.card__bottom
+								span.card__link
+									| See project
+									+icon('chevron-right')(width="20", height="20")
+
+				li.projects-masonry__item.col-12.col-md-6.col-xl-4.__js_masonry-item.__js_interior
+					a.card.card--small.card--masonry(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+						.card__image
+							img(src="img/picture/projects/masonry/6.jpg", srcset="img/picture/projects/masonry/6@2x.jpg", width="350", height="350", alt="")
+						.card__content
+							h3.card__heading Villa <br>In <br>London
+							.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such
+							.card__bottom
+								span.card__link
+									| See project
+									+icon('chevron-right')(width="20", height="20")
+
+				li.projects-masonry__item.col-12.col-md-6.col-xl-4.__js_masonry-item.__js_exterior
+					a.card.card--small.card--masonry(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+						.card__image
+							img(src="img/picture/projects/masonry/7.jpg", srcset="img/picture/projects/masonry/7@2x.jpg", width="350", height="350", alt="")
+						.card__content
+							h3.card__heading Villa <br>In <br>London
+							.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such
+							.card__bottom
+								span.card__link
+									| See project
+									+icon('chevron-right')(width="20", height="20")
+
+				li.projects-masonry__item.col-12.col-xl-8.__js_masonry-item.__js_exterior
+					a.card.card--small.card--masonry(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+						.card__image
+							img(src="img/picture/projects/masonry/8.jpg", srcset="img/picture/projects/masonry/8@2x.jpg", width="350", height="350", alt="")
+						.card__content
+							h3.card__heading Villa <br>In <br>London
+							.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such
+							.card__bottom
+								span.card__link
+									| See project
+									+icon('chevron-right')(width="20", height="20")
+
+
+block footer
+	include modules/footer

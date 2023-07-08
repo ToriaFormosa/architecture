@@ -1,0 +1,38 @@
+.project-meta {
+	@include list-reset;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	@include media(md) {
+		flex-wrap: nowrap;
+	}
+
+	&__item {
+		width: 50%;
+
+		@include media(md) {
+			width: auto;
+		}
+
+		&:nth-child(n + 3) {
+			margin-top: 30px;
+
+			@include media(md) {
+				margin-top: 0;
+			}
+		}
+
+		&-title {
+			margin-bottom: 20px;
+			font-family: $font-family--secondary;
+
+			@include text(16px, 1, $color-default-black);
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+
+		&-text {
+		}
+	}
+}

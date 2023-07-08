@@ -1,0 +1,10 @@
+mixin work-card-2(image, year, tags, heading)
+	- let workCardUrl = isDark ? URLS.works.singleStandartDark : URLS.works.singleStandart;
+	li.works__item.work-card.work-card--compact.col-12.col-md-6.col-lg-4&attributes(attributes)
+		a.work-card__image(href= workCardUrl)
+			img(src="img/works-2/" + image, width="640", height="582", alt="")
+		.work-card__content
+			.work-card__year= year
+			.work-card__tags= tags
+			h2.work-card__heading
+				a= heading

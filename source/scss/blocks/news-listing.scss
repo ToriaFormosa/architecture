@@ -1,0 +1,24 @@
+.news-listing {
+	list-style: none;
+	padding: 0;
+
+	&__item {
+		margin-bottom: 30px;
+
+		@include media(lg) {
+			height: 393px;
+		}
+
+		&--high {
+			@include media(lg) {
+				height: 478px;
+			}
+		}
+
+		&--auto {
+			@include media(lg) {
+				height: auto;
+			}
+		}
+	}
+}

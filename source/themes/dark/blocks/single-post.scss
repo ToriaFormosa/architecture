@@ -1,0 +1,331 @@
+.post-page {
+}
+
+.post-sb-page {
+	$self: &;
+
+	&__main-pic {
+		&--inner {
+			#{$self} {
+				&__title {
+				}
+
+				&__tag {
+					font-size: 18px;
+					line-height: 24px;
+					color: $color-default-white;
+					margin-bottom: 10px;
+					@include transition(color);
+
+					@include media(lg) {
+						font-size: 20px;
+						line-height: 26px;
+						margin-bottom: 25px;
+					}
+
+					@include hover {
+						color: $color-yellow;
+					}
+				}
+
+				&__heading {
+					margin: 0;
+					font-family: $font-family--secondary;
+					font-size: 40px;
+					line-height: 44px;
+					font-weight: 700;
+					color: $color-default-white;
+
+					@include media(lg) {
+						font-size: 50px;
+						line-height: 54px;
+					}
+
+					@include media(xxl) {
+						font-size: 60px;
+						line-height: 80px;
+					}
+
+					span {
+						color: $color-yellow;
+					}
+				}
+			}
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		margin-top: 28px;
+		overflow: hidden;
+
+		@include media(lg) {
+			flex-direction: row;
+			justify-content: space-between;
+			margin-top: 210px;
+		}
+	}
+}
+
+.post-sb {
+	$self: &;
+
+	&__date {
+		.author {
+			color: $color-default-white;
+		}
+	}
+
+	&__title {
+		color: $color-default-white;
+
+		a {
+			color: $color-default-white;
+		}
+	}
+
+	&__subtitle {
+		color: $color-default-white;
+	}
+
+	&__text {
+		color: $color-grey2;
+	}
+
+	&__bottom {
+		border-top: 1px solid $color-grey3;
+	}
+
+	&__tags {
+		a {
+			color: $color-grey8;
+		}
+
+		span {
+			color: $color-default-white;
+		}
+	}
+
+	&__socials {
+		> span {
+			color: $color-default-white;
+		}
+	}
+
+	&__social {
+		.social {
+			&__item + .social__item {
+				margin-left: 10px;
+			}
+
+			&__link {
+				width: 30px;
+				height: 30px;
+				@include transition(all);
+
+				@include hover {
+					svg {
+						fill: $color-yellow;
+					}
+				}
+
+				svg {
+					fill: $color-grey-92;
+					@include transition(fill);
+				}
+			}
+		}
+	}
+
+	&__related {
+		margin: 15px 0;
+
+		@include media(lg) {
+			margin: 196px 0 100px;
+		}
+	}
+
+	&__comment {
+		margin-bottom: 50px;
+
+		@include media(lg) {
+			margin-bottom: 207px;
+		}
+	}
+
+	&--full {
+		#{$self} {
+			&__content {
+				margin-right: 0;
+			}
+
+			&__content-pic {
+				@include media(lg) {
+					margin: 80px -190px 77px;
+				}
+			}
+
+			&__gallery {
+				@include media(lg) {
+					flex-direction: row;
+					margin: 0 -190px 112px;
+				}
+			}
+		}
+	}
+}
+
+.post-related {
+	background-color: $color-dark;
+
+	@include media(lg) {
+		background-color: lighten($color-dark, 5%);
+	}
+
+	&__title {
+		span {
+			color: $color-default-white;
+		}
+
+		a {
+			color: $color-grey2;
+
+			@include hover {
+				color: $color-yellow;
+
+				svg {
+					fill: $color-yellow;
+				}
+			}
+
+			svg {
+				fill: $color-base;
+			}
+		}
+	}
+
+	&__item {
+		height: auto;
+		margin-bottom: 20px;
+
+		@include media(lg) {
+			height: 350px;
+		}
+
+		.card__content {
+			background-color: $color-dark;
+
+			@include media(lg) {
+				background-color: $color-dark;
+			}
+		}
+	}
+}
+
+.comment {
+	&__title {
+		color: $color-default-white;
+	}
+
+	.comment-item {
+		&__name {
+			color: $color-default-white;
+		}
+
+		&__sent {
+			color: $color-grey5;
+		}
+
+		&__text {
+			color: $color-grey2;
+		}
+
+		&__reply {
+			background-color: lighten($color-dark, 5%);
+			border-color: lighten($color-dark, 5%);
+			color: $color-default-white;
+		}
+
+		&--replyed {
+			border-left: 1px solid #e5e5e5;
+
+			@include media(lg) {
+				border-left: none;
+			}
+		}
+	}
+}
+
+.comment-form {
+	&__title {
+		color: $color-default-white;
+	}
+
+	input,
+	textarea {
+		border-color: lighten($color-dark, 15%);
+		background-color: lighten($color-dark, 5%);
+
+		&::placeholder {
+			opacity: 1;
+			color: $color-grey8;
+		}
+
+		&:focus,
+		&:hover {
+			border-color: $color-grey8;
+		}
+	}
+
+	textarea {
+		height: 174px;
+		resize: none;
+	}
+
+	&__inputs-group {
+		display: flex;
+		flex-direction: column;
+		margin: 0 0 30px;
+
+		@include media(lg) {
+			flex-direction: row;
+			justify-content: space-between;
+			margin: 0 -15px 30px;
+		}
+
+		.comment-form__field-wrapper {
+			width: 100%;
+			margin: 0 0 15px;
+
+			@include media(lg) {
+				width: calc(50% - 30px);
+				margin: 0 15px;
+			}
+
+			label {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__btn {
+		padding: 17px 44px;
+		margin-top: 30px;
+		border-radius: 0;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		font-family: $font-family--main;
+		font-size: 16px;
+		font-weight: 500;
+		text-transform: uppercase;
+		cursor: pointer;
+
+		@include media(lg) {
+			left: 0;
+			transform: none;
+			margin-top: 32px;
+		}
+	}
+}

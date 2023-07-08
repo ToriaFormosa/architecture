@@ -1,0 +1,11 @@
+.steps {
+	&__item {
+		&::before {
+			color: $color-default-white;
+		}
+
+		&-title {
+			color: $color-default-white;
+		}
+	}
+}

@@ -1,0 +1,26 @@
+.play-btn {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	width: 79px;
+	height: 79px;
+	border-radius: 50%;
+	background-color: $color-yellow;
+	cursor: pointer;
+
+	@include transition(background-color);
+
+	&:hover,
+	&:focus {
+		outline: none;
+		background-color: $color-yellow-hover;
+	}
+
+	&__icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateY(-50%) translateX(-50%);
+		margin-left: 2px;
+	}
+}

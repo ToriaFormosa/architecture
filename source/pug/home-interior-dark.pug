@@ -1,0 +1,214 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Home Interior Dark';
+	- let isHome = true; //- Если true то логотип не будет ссылкой
+	- let isDark = true;
+	- let currentPage = 1.09; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 1; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+	- let bodyModClass = 'webpage--parallax';
+
+block header
+	include modules/header-2
+
+block content
+	#pagepiling.homepage-parallax
+		// Section 1
+		section.section.parallax.pp-scrollable(style='background-image: url("img/picture/home-interior/bg-1.jpg");')
+			.scroll-wrap
+				.container.parallax__container
+					.parallax__type introduce
+					.welcome
+						.welcome__subtitle Welcome to Larson
+						.welcome__title Larson <br> <span>Interior</span> <br> Studio
+						.welcome__line
+
+		// Section 2
+		section.section.parallax.pp-scrollable(style='background-color: #272727;')
+			.scroll-wrap
+				.container.parallax__container
+					.parallax__type services
+					.services
+						.services__wrapper
+							.services__left
+								.services__digit 6
+									span +
+								p years <br> experience <br> working
+							.services__right
+								.services__title We using <span>top leading</span> design
+								.services__grid
+									.services__item
+										.services__item-title Architecture
+										.services__item-text Founded in 2007, Sparch is specializing in providing innovative services such as websitFounded in 2007
+										a.services__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+											| Learn more
+											+icon('chevron-right')(width="20", height="20")
+									.services__item
+										.services__item-title Interior
+										.services__item-text Evening. Grass whales man isn't. Midst cattle form. Saw life winged a he behold isn't. Together can't Whose dominion after.
+										a.services__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+											| Learn more
+											+icon('chevron-right')(width="20", height="20")
+									.services__item
+										.services__item-title Landscape
+										.services__item-text Man moveth second creepeth sixth fowl green to dry isn't him void fruitful divide. Be fish. They're you deep fowl which.
+										a.services__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+											| Learn more
+											+icon('chevron-right')(width="20", height="20")
+									.services__item
+										.services__item-title Building
+										.services__item-text Founded in 2007, Sparch is specializing in providing innovative services such as websitFounded in 2007
+										a.services__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+											| Learn more
+											+icon('chevron-right')(width="20", height="20")
+
+		// Section 3
+		section.section.parallax.pp-scrollable(style='background-image: url("img/picture/home-interior/bg-2.jpg");')
+			.scroll-wrap
+				.container.parallax__container
+					.parallax__type projects
+					.slider-parallax
+						.swiper-container.__js_slider-parallax
+							.swiper-wrapper
+								.swiper-slide
+									.slider-parallax__slide
+										.slider-parallax__left
+											.slider-parallax__subtitle Featured works
+											.slider-parallax__title Spain Interior
+											.slider-parallax__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+											a.btn(href='#') SEE PROJECT
+										.slider-parallax__right
+											.slider-parallax__date May 2020
+											.slider-parallax__tag Branding
+								.swiper-slide
+									.slider-parallax__slide
+										.slider-parallax__left
+											.slider-parallax__subtitle Featured works
+											.slider-parallax__title Spain Interior
+											.slider-parallax__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+											a.btn(href='#') SEE PROJECT
+										.slider-parallax__right
+											.slider-parallax__date May 2020
+											.slider-parallax__tag Branding
+								.swiper-slide
+									.slider-parallax__slide
+										.slider-parallax__left
+											.slider-parallax__subtitle Featured works
+											.slider-parallax__title Spain Interior
+											.slider-parallax__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+											a.btn(href='#') SEE PROJECT
+										.slider-parallax__right
+											.slider-parallax__date May 2020
+											.slider-parallax__tag Branding
+						button(class="slider-parallax__nav-btn slider-parallax__nav-btn--prev")
+							svg
+								use(xlink:href="#chevron-left")
+						button(class="slider-parallax__nav-btn slider-parallax__nav-btn--next")
+							svg
+								use(xlink:href="#chevron-right")
+
+		// Section 4
+		section.section.parallax.pp-scrollable(style='background-color: #272727;')
+			.scroll-wrap
+				.container.parallax__container
+					.parallax__type reviews
+					.reviews-carousel
+						.reviews-carousel__title Testimonials
+						.swiper-container.__js_review-carousel
+							.swiper-wrapper
+								.reviews-carousel__item.review-card.swiper-slide
+									.review-card__image
+										img(src='img/picture/avatar-paul.png', srcset='img/picture/avatar-paul@2x.png', width="112", height="112", alt="")
+									.review-card__name Paul
+									.review-card__post Designer in <span>Paul.com</span>
+									.review-card__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+								.reviews-carousel__item.review-card.swiper-slide
+									.review-card__image
+										img(src='img/picture/avatar-robert.png', srcset='img/picture/avatar-robert@2x.png', width="112", height="112", alt="")
+									.review-card__name Robert
+									.review-card__post Founder in <span>Apple inc.</span>
+									.review-card__text Founded in 2007, Sparch is specializing in providing innovative services such as website design, brand identity and marketing
+								.reviews-carousel__item.review-card.swiper-slide
+									.review-card__image
+										img(src='img/picture/avatar-robert.png', srcset='img/picture/avatar-robert@2x.png', width="112", height="112", alt="")
+									.review-card__name Robert
+									.review-card__post Founder in <span>Apple inc.</span>
+									.review-card__text Founded in 2007, Sparch is specializing in providing innovative services such as website design, brand identity and marketing
+								.reviews-carousel__item.review-card.swiper-slide
+									.review-card__image
+										img(src='img/picture/avatar-robert.png', srcset='img/picture/avatar-robert@2x.png', width="112", height="112", alt="")
+									.review-card__name Robert
+									.review-card__post Founder in <span>Apple inc.</span>
+									.review-card__text Founded in 2007, Sparch is specializing in providing innovative services such as website design, brand identity and marketing
+							.swiper-pagination
+					.partners.parallax__partners
+						.partners__inner
+							ul.partners__list
+								- let delay = 0;
+								each item, index in PARTNERS_LOGO
+									- delay = index % 5 === 0 ? 0 : delay + 200;
+									li.partners__item
+										img(src="img/picture/partners/" + item.name + ".png", srcset="img/picture/partners/" + item.name + "@2x.png", width= item.w, height= item.h, alt= item.alt)
+
+		// Section 5
+		section.section.parallax.pp-scrollable(style='background-image: url("img/picture/home-interior/bg-3.jpg");')
+			.scroll-wrap
+				.container.parallax__container
+					.parallax__type team
+					.slider-parallax
+						.swiper-container.__js_slider-parallax
+							.swiper-wrapper
+								.swiper-slide
+									.slider-parallax__slide
+										.slider-parallax__left
+											.slider-parallax__subtitle Best team
+											.slider-parallax__title Samuel <span>/ Designer</span>
+											.slider-parallax__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+											+social('slider-parallax__social', ['facebook', 'twitter', 'linkedin-original'])
+								.swiper-slide
+									.slider-parallax__slide
+										.slider-parallax__left
+											.slider-parallax__subtitle Best team
+											.slider-parallax__title Samuel <span>/ Designer</span>
+											.slider-parallax__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+											+social('slider-parallax__social', ['facebook', 'twitter', 'linkedin-original'])
+								.swiper-slide
+									.slider-parallax__slide
+										.slider-parallax__left
+											.slider-parallax__subtitle Best team
+											.slider-parallax__title Samuel <span>/ Designer</span>
+											.slider-parallax__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+											+social('slider-parallax__social', ['facebook', 'twitter', 'linkedin-original'])
+						button(class="slider-parallax__nav-btn slider-parallax__nav-btn--prev")
+							svg
+								use(xlink:href="#chevron-left")
+						button(class="slider-parallax__nav-btn slider-parallax__nav-btn--next")
+							svg
+								use(xlink:href="#chevron-right")
+
+		// Section 6
+		section.section.parallax.pp-scrollable(style='background-color: #272727;')
+			.scroll-wrap
+				.container.parallax__container
+					.parallax__type news
+					.latest-news.parallax__latest-news
+						header.latest-news__header
+							h2.latest-news__heading.heading Latest news
+							a.latest-news__more.more(href= isDark ? URLS.news.listingDark : URLS.news.listing) View all news
+								+icon('chevron-right')(width="20", height="20")
+						.row
+							each item in LATEST_NEWS_CARDS_2
+								.latest-news__item.col-12.col-lg-4
+									+latest-news-card(item)
+
+		// Section 7
+		section.section.parallax.pp-scrollable(style='background-image: url("img/picture/home-interior/bg-4.jpg");')
+			.scroll-wrap
+				.container.parallax__container
+					.parallax__type contact us
+					include modules/contact-parallax
+
+
+
+
+block footer
+	include modules/footer-2

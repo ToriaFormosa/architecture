@@ -1,0 +1,98 @@
+.logo {
+	$self: &;
+
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: top;
+	padding: 7px 0 11px 15px;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 40px;
+		height: 100%;
+		border: solid 2px $color-yellow;
+		border-right: none;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 40px;
+		height: 100%;
+		background-color: $color-yellow;
+		transform: translateX(-100%);
+
+		@include transition(transform);
+	}
+
+	&--borderless {
+		padding: 0;
+
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+
+	&--white {
+		#{$self}__large,
+		#{$self}__small {
+			color: $color-default-white;
+			opacity: 1;
+		}
+	}
+
+	&--large {
+		@include media(md) {
+			padding: 32px 0 42px 40px;
+
+			&::before,
+			&::after {
+				width: 88px;
+				border-width: 4px;
+			}
+
+			#{$self}__large {
+				font-size: 70px;
+				line-height: 1.28;
+			}
+
+			#{$self}__small {
+				font-size: 19px;
+				line-height: 1.16;
+			}
+		}
+	}
+
+	&__large {
+		display: block;
+
+		@include text(28px, 1.21, $color-default-black);
+		font-family: $font-family--secondary;
+		font-weight: 700;
+	}
+
+	&__small {
+		display: block;
+
+		@include text(11px, 1.18, $color-default-black);
+		opacity: 0.6;
+	}
+
+	&[href]:hover,
+	&[href]:focus {
+		outline: none;
+
+		&::after {
+			transform: translateX(0);
+		}
+	}
+}

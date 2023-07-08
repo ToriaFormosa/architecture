@@ -1,0 +1,46 @@
+.field {
+	$self: &;
+
+	position: relative;
+	display: block;
+	width: 100%;
+	cursor: text;
+
+	input,
+	textarea {
+		display: block;
+		width: 100%;
+		padding: 15px 16px;
+		border: solid 1px $color-grey7;
+		font-family: $font-family--main;
+
+		@include text(16px, 1);
+
+		&::placeholder {
+			@include text(16px, 1);
+			opacity: 1;
+		}
+
+		@include transition(border-color);
+
+		&:focus {
+			outline: none;
+			border-color: $color-default-black;
+			color: $color-default-black;
+		}
+
+		@include hover {
+			border-color: $color-default-black;
+		}
+	}
+
+	textarea {
+		resize: none;
+		height: 150px;
+		padding: 24px;
+
+		@include media(xl) {
+			height: 174px;
+		}
+	}
+}

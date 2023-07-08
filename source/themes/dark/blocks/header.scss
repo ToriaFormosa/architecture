@@ -1,0 +1,60 @@
+.header {
+	background-color: $color-dark;
+
+	&--half {
+		background-color: transparent;
+	}
+
+	&--fixed {
+		background-color: $color-dark;
+
+		.logo {
+			&__large,
+			&__small {
+				color: $color-default-white;
+			}
+		}
+
+		@include media(lg) {
+			.social {
+				&__link {
+					svg {
+						fill: $color-default-white;
+					}
+
+					&:focus {
+						svg {
+							fill: $color-yellow;
+						}
+					}
+
+					@include hover {
+						svg {
+							fill: $color-yellow;
+						}
+					}
+				}
+			}
+		}
+
+		.navigation {
+			$navigation: &;
+
+			&__link {
+				color: $color-default-white;
+
+				&:hover,
+				&:focus {
+					color: $color-yellow;
+				}
+			}
+		}
+
+		.menu-toggle {
+			&::before,
+			&::after {
+				border-top: solid 3px $color-default-white;
+			}
+		}
+	}
+}

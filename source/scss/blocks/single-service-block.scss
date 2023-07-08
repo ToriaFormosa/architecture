@@ -1,0 +1,31 @@
+.single-service-block {
+	h2 {
+		margin: 0 0 32px;
+
+		font-family: $font-family--secondary;
+
+		@include text(25px, 1.4, $color-default-black);
+		font-weight: 700;
+
+		@include media(xl) {
+			margin-bottom: 42px;
+		}
+	}
+
+	p {
+		margin: 0;
+	}
+
+	p + p {
+		margin-top: 24px;
+
+		@include media(xl) {
+			margin-top: 50px;
+		}
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}

@@ -1,0 +1,20 @@
+mixin news-card(image, num, month, year, title, tag, author)
+	- let href = isDark ? URLS.news.postDark : URLS.news.post;
+	li.news-card.__js_news-list-item.col-12.col-md-6&attributes(attributes)
+		.news-card__pic
+			img(src='img/news/' + image, alt="")
+		.news-card__content
+			.news-card__date
+				p.num= num
+				p.month= month
+				p.year= year
+			.news-card__title
+				a(href= href, target='_blank')= title
+				p.author
+					if isDark
+						a(href= URLS.news.gridDark)= tag
+					else
+						a(href= URLS.news.grid)= tag
+					span.delimiter /
+					span
+						a(href="#")= author

@@ -1,0 +1,66 @@
+.slide-tab {
+	$self: &;
+
+	display: flex;
+	align-items: flex-start;
+	padding: 8px 8px;
+	text-align: left;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+
+	@include media(md) {
+		padding: 20px;
+	}
+
+	@include media(lg) {
+		padding: 58px 60px;
+	}
+
+	&__number {
+		margin-right: 8px;
+		font-family: $font-family--secondary;
+
+		@include text(24px, 1);
+		font-weight: 700;
+		color: $color-default-black !important;
+
+		@include transition(color);
+
+		@include media(md) {
+			margin-right: 16px;
+			font-size: 48px;
+		}
+
+		@include media(lg) {
+			margin-right: 36px;
+			font-size: 60px;
+			line-height: 0.9;
+		}
+	}
+
+	&__title {
+		max-width: 110px;
+
+		@include text(12px, 1.625);
+		font-weight: 600;
+		color: $color-default-black !important;
+
+		@include transition(color);
+
+		@include media(md) {
+			font-size: 16px;
+		}
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	@include hover {
+		#{$self}__number,
+		#{$self}__title {
+			color: $color-yellow !important;
+		}
+	}
+}

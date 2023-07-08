@@ -1,0 +1,81 @@
+.process {
+	&__heading {
+		position: relative;
+		margin: 0 0 32px;
+
+		@include media(md) {
+			margin-bottom: 64px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 100px;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: -15px;
+			top: 30%;
+			width: 45px;
+			border-top: solid 2px $color-yellow;
+			transform: translateX(-100%);
+
+			@include media(md) {
+				width: 70px;
+			}
+
+			@include media(xl) {
+				left: -36px;
+			}
+		}
+	}
+
+	&__text {
+		margin-top: 20px;
+
+		font-size: 18px;
+		line-height: 1.6;
+
+		@include media(sm) {
+			margin-top: 40px;
+		}
+
+		@include media(md) {
+			margin-top: 60px;
+		}
+
+		@include media(lg) {
+			margin-top: 80px;
+		}
+
+		@include media(xl) {
+			margin-top: 100px;
+			font-size: 25px;
+		}
+	}
+
+	&__steps {
+		margin: 42px 0;
+
+		@include media(sm) {
+			margin: 60px 0;
+		}
+
+		@include media(md) {
+			margin: 100px 0;
+		}
+
+		@include media(lg) {
+			margin: 140px 0;
+		}
+
+		@include media(xl) {
+			margin: 194px 0 180px;
+		}
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}

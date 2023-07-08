@@ -1,0 +1,119 @@
+.projects-slider {
+	&__item {
+		max-width: 510px;
+
+		&.swiper-slide-prev,
+		&.swiper-slide-next {
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-color: rgba($color-default-white, 0.4);
+			}
+		}
+
+		@include media(md) {
+			max-width: 690px;
+		}
+
+		@include media(lg) {
+			max-width: 930px;
+		}
+
+		@include media(xl) {
+			max-width: 1110px;
+		}
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	&__navigation {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		z-index: 1;
+		transform: translateX(-50%);
+		width: 100%;
+		max-width: 510px;
+		height: 0;
+		box-sizing: border-box;
+
+		@include media(md) {
+			max-width: 690px;
+		}
+
+		@include media(lg) {
+			max-width: 930px;
+		}
+
+		@include media(xl) {
+			max-width: 1110px;
+		}
+	}
+
+	&__next,
+	&__prev {
+		position: absolute;
+		top: 0;
+		transform: translateY(-50%);
+		width: 32px;
+		height: 32px;
+		border: none;
+		background-color: transparent;
+		cursor: pointer;
+
+		@include media(lg) {
+			width: 64px;
+			height: 64px;
+		}
+
+		&.swiper-button-disabled {
+			display: none;
+		}
+
+		svg {
+			fill: $color-default-white;
+			@include transition(fill);
+
+			width: 32px;
+			height: 32px;
+
+			@include media(lg) {
+				width: 64px;
+				height: 64px;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			outline: none;
+			fill: $color-yellow;
+		}
+
+		&:active {
+			opacity: 0.7;
+		}
+	}
+
+	&__next {
+		right: 24px;
+
+		@include media(xl) {
+			right: 48px;
+		}
+	}
+
+	&__prev {
+		left: 24px;
+
+		@include media(xl) {
+			left: 48px;
+		}
+	}
+}

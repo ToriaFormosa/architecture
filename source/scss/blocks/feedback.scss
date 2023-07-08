@@ -1,0 +1,14 @@
+.feedback {
+	&__heading {
+		font-size: 32px;
+		margin: 0 0 32px;
+
+		@include media(xl) {
+			margin-bottom: 50px;
+		}
+	}
+
+	&__field-wrapper {
+		margin-bottom: 30px;
+	}
+}

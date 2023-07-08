@@ -1,0 +1,171 @@
+.slider-parallax {
+	padding-bottom: 70px;
+	position: relative;
+
+	@include media(xl) {
+		padding-bottom: 23px;
+	}
+
+	&__slide {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		@include media(md) {
+			flex-direction: row;
+		}
+	}
+
+	&__left {
+		margin-top: 30px;
+		order: 1;
+
+		@include media(md) {
+			max-width: 500px;
+			margin-top: 0;
+			order: 0;
+		}
+	}
+
+	&__subtitle {
+		font-size: 20px;
+		font-weight: bold;
+		margin-bottom: 18px;
+		text-transform: uppercase;
+
+		@include media(md) {
+			font-size: 23px;
+		}
+
+		@include media(lg) {
+			font-size: 25px;
+			margin-bottom: 36px;
+		}
+	}
+
+	&__title {
+		font-family: $font-family--secondary;
+		font-size: 40px;
+		line-height: 45px;
+		font-weight: bold;
+		margin-bottom: 25px;
+
+		@include media(sm) {
+			font-size: 55px;
+			line-height: 60px;
+		}
+
+		@include media(md) {
+			font-size: 75px;
+			line-height: 80px;
+		}
+
+		@include media(lg) {
+			font-size: 90px;
+			line-height: 105px;
+			margin-bottom: 38px;
+		}
+
+		span {
+			font-size: 32px;
+			font-weight: 400;
+		}
+	}
+
+	&__text {
+		max-width: 320px;
+		font-size: 14px;
+		line-height: 22px;
+		color: $color-grey-cc;
+		margin-bottom: 50px;
+
+		@include media(sm) {
+			font-size: 16px;
+			line-height: 26px;
+		}
+	}
+
+	&__right {
+		padding-top: 7px;
+		padding-right: 14px;
+		font-size: 20px;
+		text-transform: uppercase;
+
+		@include media(md) {
+			text-align: right;
+		}
+
+		@include media(lg) {
+			font-size: 25px;
+		}
+	}
+
+	&__tag {
+		font-weight: bold;
+	}
+
+	&__nav-btn {
+		width: 50px;
+		height: 50px;
+		background-color: transparent;
+		position: absolute;
+		bottom: 0;
+		z-index: 1;
+		border: none;
+		cursor: pointer;
+
+		@include media(lg) {
+			bottom: -22px;
+		}
+
+		@include media(xl) {
+			top: 41%;
+			bottom: unset;
+		}
+
+		@include media(xxl) {
+			width: 64px;
+			height: 64px;
+		}
+
+		@include hover {
+			svg {
+				fill: $color-yellow;
+			}
+		}
+
+		svg {
+			width: 100%;
+			height: 100%;
+			fill: $color-default-white;
+			@include transition(fill);
+		}
+
+		&--prev {
+			left: calc(50% - 50px);
+			transform: translateX(-50%);
+
+			@include media(xl) {
+				left: -25px;
+			}
+
+			@include media(xxl) {
+				left: -181px;
+			}
+		}
+
+		&--next {
+			left: calc(50% + 50px);
+			transform: translateX(-50%);
+
+			@include media(xl) {
+				right: -25px;
+				left: unset;
+			}
+
+			@include media(xxl) {
+				right: -161px;
+			}
+		}
+	}
+}

@@ -1,0 +1,11 @@
+.hero {
+	&__content {
+		@include media(xl) {
+			background-color: $color-dark;
+		}
+	}
+
+	&__tag {
+		color: $color-default-white;
+	}
+}

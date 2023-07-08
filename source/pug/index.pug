@@ -1,0 +1,48 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Intro';
+	- let isHome = true; //- Если true то логотип не будет ссылкой
+	- let isDark = false;
+	- let currentPage = 0; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 0; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
+	- let isIntro = true;
+
+block header
+	include modules/header-intro
+block content
+	article.intro
+		header.intro__header
+			img.__js_parallax-image(src="img/picture/intro/main.jpg", srcset="img/picture/intro/main@2x.jpg", width="1803", height="872", alt="")
+
+			.intro__wrapper.__js_paralax-text
+				h1.intro__heading <span class="color-yellow">Showcase</span> <br>Portfolio for <br>Architecture & Interior
+				.intro__tag Architecture & Interior
+
+		section.intro__section
+			.intro__section-inner.container
+				header.intro__section-header
+					h2.intro__section-heading(data-aos="fade") 9 Impressive Demos
+				ul.intro__list.row
+					each item in IMPRESSIVE_DEMOS
+						+intro-card(item)(class="col-12 col-md-6 col-lg-4", data-aos="fade")
+
+		section.intro__section.intro__section--bg
+			.intro__section-inner.container
+				header.intro__section-header
+					h2.intro__section-heading(data-aos="fade") Beautiful Portfolio Layouts
+					.intro__section-text(data-aos="fade") Easy to customize & showcase the projects in the way that you like with 7 layout styles for Portfolio pages and 3 project showcase pages
+				ul.intro__list.row
+					each item in BEAUTIFUL_PORTFOLIO_LAYOUTS
+						+intro-card(item)(class="col-12 col-md-6 col-lg-3", data-aos="fade")
+
+		section.intro__section.intro__section--full
+			.intro__section-inner.container
+				header.intro__section-header
+					h2.intro__section-heading(data-aos="fade") Inner pages
+					.intro__section-text(data-aos="fade") Larson is packed with ready-to-use page layouts which you can edit easily to suit your needs.
+
+			.marquee.__js_marquee
+				img(src="img/picture/intro/inner-pages.jpg", width="2882", height="1153" alt="")
+
+block footer
+	include modules/footer-intro

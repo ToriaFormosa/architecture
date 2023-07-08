@@ -1,0 +1,13 @@
+.main-slider {
+	.tp-tabs {
+		background-color: $color-dark !important;
+	}
+
+	.tp-tab {
+		&.selected {
+			.slide-tab__title {
+				color: $color-default-white !important;
+			}
+		}
+	}
+}

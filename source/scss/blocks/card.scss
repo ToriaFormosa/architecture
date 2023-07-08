@@ -1,0 +1,537 @@
+.card {
+	$self: &;
+
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+	//max-width: 290px;
+
+	&--masonry,
+	&--carousel {
+		#{$self}__heading {
+			visibility: hidden;
+
+			br {
+				display: none;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			#{$self}__heading {
+				visibility: visible;
+			}
+		}
+	}
+
+	&--carousel {
+		#{$self}__heading {
+			br {
+				display: block;
+			}
+		}
+
+		#{$self}__text {
+			max-width: 472px;
+		}
+	}
+
+	&--small {
+		#{$self}__heading {
+			font-size: 25px;
+		}
+	}
+
+	&--team {
+		#{$self}__heading {
+			visibility: hidden;
+		}
+
+		&:focus {
+			#{$self}__heading {
+				visibility: visible;
+			}
+
+			#{$self}__content {
+				border: solid 4px $color-yellow;
+				background-color: rgba($color-default-white, 0.9) !important;
+			}
+		}
+
+		@include hover {
+			#{$self}__heading {
+				visibility: visible;
+			}
+
+			#{$self}__content {
+				border: solid 4px $color-yellow;
+				background-color: rgba($color-default-white, 0.9) !important;
+			}
+		}
+
+		.social {
+			&__link {
+				svg {
+					fill: $color-default-black;
+				}
+
+				&:focus {
+					svg {
+						fill: $color-yellow;
+					}
+				}
+
+				@include hover {
+					svg {
+						fill: $color-yellow;
+					}
+				}
+			}
+		}
+	}
+
+	&--send {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		padding: 60px 40px;
+		border: solid 1px $color-grey5;
+
+		@include transition(border-color);
+
+		&:focus {
+			border-color: $color-yellow;
+
+			#{$self}__send-text {
+				color: $color-yellow;
+			}
+		}
+
+		@include hover {
+			border-color: $color-yellow;
+
+			#{$self}__send-text {
+				color: $color-yellow;
+			}
+		}
+	}
+
+	&--transparent {
+		min-height: 340px;
+		border: solid 1px $color-default-white;
+
+		@include transition(border-color);
+
+		#{$self}__heading {
+			position: static;
+			font-size: 27px;
+			line-height: 1.29;
+		}
+
+		#{$self}__content {
+			padding: 24px 30px 4px;
+			justify-content: flex-end;
+		}
+
+		#{$self}__text {
+			position: absolute;
+			margin-bottom: 20px;
+		}
+
+		&:focus {
+			border-color: $color-yellow;
+
+			#{$self}__text {
+				position: static;
+				transition: transform 0.4s 0.4s ease, opacity 0.4s 0.4s ease;
+			}
+
+			#{$self}__heading {
+				//transition: transform 0.4s 0.2s ease !important;
+			}
+		}
+
+		@include hover {
+			border-color: $color-yellow;
+			transition: transform 0.4s 0.4s ease, opacity 0.4s 0.4s ease;
+
+			#{$self}__text {
+				position: static;
+			}
+
+			#{$self}__heading {
+				//transition: transform 0.4s 0.2s ease !important;
+			}
+		}
+	}
+
+	&:hover,
+	&:focus {
+		outline: none;
+
+		#{$self}__content {
+			background-color: rgba($color-yellow, 0.95);
+		}
+
+		#{$self}__date {
+			opacity: 1;
+			transform: translateY(0);
+			transition: transform 0.6s 0.4s ease, opacity 0.6s 0.4s ease;
+		}
+
+		#{$self}__tag {
+			color: $color-default-black;
+			transform: translateY(0);
+			transition: transform 0.5s ease;
+		}
+
+		#{$self}__heading {
+			position: static;
+			color: $color-default-black;
+			transform: translateY(0);
+			transition: transform 0.5s ease;
+		}
+
+		#{$self}__text {
+			opacity: 1;
+			transform: translateY(0);
+
+			transition: transform 0.4s 0.2s ease, opacity 0.4s 0.2s ease;
+		}
+
+		#{$self}__bottom {
+			opacity: 1;
+		}
+	}
+
+	&__tag {
+		margin-bottom: 4px;
+		color: $color-default-white;
+		transform: translateY(-20px);
+	}
+
+	&__send-text {
+		max-width: 100px;
+		font-family: $font-family--secondary;
+
+		@include text(25px, 1.2, $color-default-black);
+		font-weight: 700;
+		text-transform: uppercase;
+
+		@include transition(color);
+	}
+
+	&__image {
+		display: block;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&__content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		padding: 30px;
+
+		transition: background-color 0.5s ease;
+
+		@include media(xl) {
+			padding: 44px 30px;
+		}
+	}
+
+	&__date {
+		font-size: 16px;
+		line-height: 26px;
+		color: $color-default-black;
+		margin-bottom: 16px;
+
+		@include media(lg) {
+			opacity: 0;
+			transform: translateY(-20px);
+		}
+	}
+
+	&__heading {
+		position: absolute;
+		left: 32px;
+		bottom: 12px;
+		margin: 0;
+		transform: translateY(-20px);
+
+		@include text(28px, 1.4, $color-default-white);
+		font-family: $font-family--secondary;
+
+		@include media(xl) {
+			left: 40px;
+			bottom: 24px;
+			font-size: 32px;
+		}
+	}
+
+	&__text {
+		display: block;
+		max-width: 340px;
+		margin-top: 24px;
+		margin-bottom: auto;
+		opacity: 0;
+		transform: translateY(-20px);
+
+		@include text(16px, 1.3125, $color-default-black);
+
+		br {
+			display: none;
+
+			@include media(lg) {
+				display: block;
+			}
+		}
+	}
+
+	&__bottom {
+		display: block;
+		margin-top: 12px;
+		opacity: 0;
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+
+		//transition: opacity 0.5s ease;
+
+		@include text(20px, 1.15, $color-default-black);
+		font-weight: 700;
+
+		svg {
+			margin-left: 8px;
+		}
+	}
+
+	&--news {
+		height: 100%;
+		overflow: hidden;
+
+		&:hover,
+		&:focus {
+			outline: none;
+
+			#{$self}__content {
+				background-color: $color-default-white;
+			}
+
+			#{$self}__heading {
+				visibility: visible;
+			}
+		}
+
+		@include hover {
+			&:hover,
+			&:focus {
+				outline: none;
+
+				#{$self}__content {
+					background-color: $color-default-white;
+					transform: translateX(0);
+				}
+
+				#{$self}__heading {
+					opacity: 1;
+					transition: transform 0.5s 0.5s ease, opacity 0.4s 0.5s ease;
+				}
+
+				#{$self}__text {
+					transition: transform 0.4s 0.6s ease, opacity 0.4s 0.6s ease;
+				}
+			}
+		}
+
+		#{$self} {
+			&__content {
+				width: 100%;
+				padding-left: 0;
+				background-color: $color-default-white;
+				position: relative;
+				transition: transform 0.4s ease;
+
+				@include media(lg) {
+					max-width: 351px;
+					padding-left: 30px;
+					border: 4px solid $color-yellow;
+					transform: translateX(100%);
+					position: absolute;
+					left: unset;
+					right: 0;
+				}
+
+				@include media(xl) {
+					padding: 36px 32px 22px;
+				}
+
+				&--full {
+					@include media(lg) {
+						max-width: 100%;
+					}
+				}
+			}
+
+			&__heading {
+				position: relative;
+				left: unset;
+				bottom: unset;
+				transform: none;
+				color: $color-default-black;
+				visibility: visible;
+
+				@include media(lg) {
+					position: absolute;
+					left: 32px;
+					bottom: 12px;
+					opacity: 0;
+					transform: translateY(-20px);
+				}
+			}
+
+			&__text {
+				margin-top: 27px;
+				line-height: 26px;
+				opacity: 1;
+				transform: none;
+
+				@include media(lg) {
+					opacity: 0;
+					transform: translateY(-20px);
+				}
+			}
+
+			&__image {
+				height: 400px;
+
+				@include media(lg) {
+					height: 100%;
+				}
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			&__bottom {
+				opacity: 1;
+
+				@include media(lg) {
+					opacity: 0;
+				}
+			}
+
+			&__link {
+				font-size: 16px;
+				font-weight: 600;
+				color: $color-yellow3;
+
+				@include hover {
+					svg {
+						animation: link-arrow-hover 0.4s ease;
+					}
+				}
+
+				svg {
+					fill: $color-yellow3;
+					margin-left: 16px;
+				}
+			}
+		}
+	}
+
+	&--news-masonry {
+		&:hover,
+		&:focus {
+			#{$self}__content {
+				transform: none;
+				border-color: $color-yellow;
+			}
+
+			#{$self}__date {
+				transform: none;
+			}
+
+			#{$self}__heading {
+				transform: none;
+			}
+
+			#{$self}__text {
+				transform: none;
+			}
+
+			#{$self}__link {
+				color: $color-yellow;
+
+				svg {
+					fill: $color-yellow;
+				}
+			}
+		}
+
+		#{$self} {
+			&__content {
+				border-color: transparent;
+				transition: background-color 0.3s ease, border-color 0.3s ease;
+
+				@include media(lg) {
+					background-color: $color-grey-f4;
+					transform: none;
+					position: relative;
+				}
+			}
+
+			&__date {
+				@include media(lg) {
+					opacity: 1;
+					transform: none;
+				}
+			}
+
+			&__heading {
+				@include media(lg) {
+					position: relative;
+					left: unset;
+					bottom: unset;
+					transform: none;
+					opacity: 1;
+				}
+			}
+
+			&__text {
+				@include media(lg) {
+					opacity: 1;
+					transform: none;
+				}
+			}
+
+			&__bottom {
+				opacity: 1;
+			}
+
+			&__link {
+				color: $color-default-black;
+				transition: color 0.3s ease;
+
+				svg {
+					fill: $color-default-black;
+					transition: fill 0.3s ease;
+				}
+			}
+		}
+	}
+}

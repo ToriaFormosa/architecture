@@ -1,0 +1,24 @@
+.contact-parallax
+	.contact-parallax__wrapper
+		.contact-parallax__left
+			.contact-parallax__title Contact
+			.contact-parallax__text You'll called for yielding male, so lights <br> Stars abundantly, is their.
+			.contact-parallax__address 69 Queen St, Melbourne Australia
+			a.contact-parallax__phone(href='tel:+7068980751') (+706) 898-0751
+			a.contact-parallax__email(href='mailto:Larson@mail.com') Larson@mail.com
+		.contact-parallax__right
+			.contact-parallax__form-title Let's grab a coffee and jump on conversation <span>chat with us.</span>
+			form.contact-parallax__form.js-form-validate(action='php/mail.php', method='POST')
+				label.field
+					input(type="text", name="name", placeholder="Name")
+					.line
+				.field-error(style='display: none')
+				label.field
+					input(type="email", name="email", placeholder="Email*" required)
+					.line
+				.field-error(style='display: none')
+				label.field.label-textarea
+					textarea(name="message", placeholder="Message")
+					.line
+				.field-error(style='display: none')
+				button.btn.contact-parallax__submit(type='submit') send message

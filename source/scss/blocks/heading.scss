@@ -1,0 +1,29 @@
+.heading {
+	margin: 0;
+	font-family: $font-family--secondary;
+
+	@include text(32px, 1.25, $color-default-black);
+	font-weight: 700;
+
+	@include media(md) {
+		font-size: 40px;
+	}
+
+	@include media(xl) {
+		font-size: 48px;
+	}
+
+	&--upper {
+		text-transform: uppercase;
+	}
+
+	&--size-large {
+		@include media(md) {
+			font-size: 48px;
+		}
+
+		@include media(xl) {
+			font-size: 60px;
+		}
+	}
+}

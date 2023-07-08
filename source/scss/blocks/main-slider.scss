@@ -1,0 +1,58 @@
+.main-slider {
+	.tp-tabs {
+		padding: 0 !important;
+		background-color: $color-default-white !important;
+	}
+
+	.tp-tab {
+		opacity: 1 !important;
+
+		&.selected {
+			.slide-tab {
+				cursor: default;
+			}
+			.slide-tab__number {
+				color: $color-yellow !important;
+			}
+			.slide-tab__title {
+				color: $color-default-black !important;
+			}
+		}
+	}
+
+	.tparrows {
+		width: auto;
+		height: auto;
+		background-color: transparent;
+
+		&:hover {
+			background-color: transparent;
+
+			&::before {
+				opacity: 0.6 !important;
+			}
+		}
+
+		&::before {
+			font-family: $font-family--secondary;
+
+			@include text(20px, 1.2, $color-default-white);
+			font-weight: 700;
+			letter-spacing: 0.2em;
+			text-transform: uppercase;
+
+			@include transition(opacity);
+		}
+	}
+
+	.tp-leftarrow {
+		&::before {
+			content: "prev";
+		}
+	}
+	.tp-rightarrow {
+		&::before {
+			content: "next";
+		}
+	}
+}

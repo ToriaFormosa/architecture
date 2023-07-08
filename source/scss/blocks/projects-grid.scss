@@ -1,0 +1,18 @@
+.projects-grid {
+	&__inner {
+		@include media(xl) {
+			max-width: $width--full;
+		}
+	}
+
+	&__list {
+		list-style: none;
+		margin-top: -30px;
+		margin-bottom: 0;
+		padding: 0;
+	}
+
+	&__item {
+		margin-top: 30px;
+	}
+}

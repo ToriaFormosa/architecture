@@ -1,0 +1,19 @@
+.navigation {
+	$self: &;
+
+	&__dropdown {
+		@include media(lg) {
+			background-color: $color-dark;
+		}
+
+		&-item {
+			a {
+				color: $color-default-white;
+			}
+		}
+	}
+
+	&__link {
+		color: $color-default-white;
+	}
+}

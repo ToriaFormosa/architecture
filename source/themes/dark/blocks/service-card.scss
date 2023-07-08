@@ -1,0 +1,45 @@
+.service-card {
+	$self: &;
+
+	&--reverse {
+		#{$self}__detail {
+			@include media(md) {
+				border-left-color: lighten($color-dark, 5%);
+
+				@include hover {
+					border-color: $color-yellow;
+				}
+			}
+		}
+	}
+
+	&__detail {
+		@include media(md) {
+			border-top-color: lighten($color-dark, 5%);
+			border-right-color: lighten($color-dark, 5%);
+			background-color: lighten($color-dark, 5%);
+		}
+	}
+
+	&__heading {
+		color: $color-default-white;
+	}
+
+	&__link {
+		&:focus {
+			color: $color-default-white;
+
+			svg {
+				fill: $color-default-white;
+			}
+		}
+
+		@include hover {
+			color: $color-default-white;
+
+			svg {
+				fill: $color-default-white;
+			}
+		}
+	}
+}

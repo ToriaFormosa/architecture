@@ -1,0 +1,13 @@
+mixin latest-news-card(item)
+	- let tag = item.tag ? item.tag : 'div';
+	#{tag}.preview-card(tabindex="0")&attributes(attributes)
+		.preview-card__image
+			img(src= item.img.path + item.img.name + '.jpg', srcset= item.img.path + item.img.name + '@2x.jpg', width="350", height="352", alt="")
+		.preview-card__content
+			time.preview-card__date(datetime= item.date.datetime)= item.date.text
+			h3.preview-card__heading= item.title
+			.preview-card__text= item.text
+			a.preview-card__btn(href= isDark ? URLS.news.postDark : URLS.news.post)
+				| Learn more
+				+icon('chevron-right')(width="20", height="20")
+

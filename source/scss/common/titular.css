@@ -1,0 +1,25 @@
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+li {
+	line-height: 1;
+}
+
+a {
+	font-size: 14px;
+	line-height: 1.1;
+	color: #000000;
+	transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+	outline: none;
+	color: #ff4800;
+}
+
+a:active {
+	opacity: 0.7;
+}

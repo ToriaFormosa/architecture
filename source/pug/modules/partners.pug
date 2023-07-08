@@ -1,0 +1,10 @@
+// Partners
+section.webpage__partners.partners
+	.partners__inner.container
+		ul.partners__list
+			- let delay = 0;
+			- let suf = isDark ? 'w': '';
+			each item, index in PARTNERS_LOGO
+				- delay = index % 5 === 0 ? 0 : delay + 200;
+				li.partners__item(data-aos="fade", data-aos-delay= delay)
+					img(src="img/picture/partners/" + item.name + suf + ".png", srcset="img/picture/partners/" + item.name + suf + "@2x.png", width= item.w, height= item.h, alt= item.alt)

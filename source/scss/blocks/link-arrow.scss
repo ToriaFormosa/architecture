@@ -1,0 +1,33 @@
+.link-arrow {
+	display: inline-flex;
+	align-items: center;
+
+	@include transition(color);
+
+	@include text(20px, 1.15, $color-default-black);
+	font-weight: 600;
+
+	svg {
+		margin-left: 16px;
+		fill: $color-default-black;
+
+		@include transition(fill);
+	}
+
+	&--white {
+		color: $color-default-white;
+
+		svg {
+			fill: $color-default-white;
+		}
+	}
+
+	@include hover {
+		outline: none;
+		color: $color-yellow;
+
+		svg {
+			fill: $color-yellow;
+		}
+	}
+}

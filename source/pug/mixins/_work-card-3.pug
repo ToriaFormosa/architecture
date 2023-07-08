@@ -1,0 +1,10 @@
+mixin work-card-3(image, h, year, tags, heading)
+	- let workCardUrl = isDark ? URLS.works.singleStandartDark : URLS.works.singleStandart;
+	li.works__item.work-card.work-card--masonry&attributes(attributes)
+		a.work-card__image(href= workCardUrl)
+			img(src="img/works-3/" + image, width="428", height= h, alt="")
+		.work-card__content
+			.work-card__year= year
+			.work-card__tags= tags
+			h2.work-card__heading
+				a= heading

@@ -1,0 +1,13 @@
+mixin work-card-4(image, tags, heading, cardTag)
+	- let href = isDark ? URLS.works.singleStandartDark : URLS.works.singleStandart;
+	- let tag = cardTag ? cardTag : 'div';
+	#{tag}.work-card.work-card--grid&attributes(attributes)
+		a.work-card__image(href= href)
+			img(src="img/works-3/" + image, width="827", height= "685", alt="")
+		.work-card__content
+			.work-card__content-wrapper
+				.work-card__tags= tags
+				h2.work-card__heading
+					a(href= href)= heading
+			a.work-card__button(href= href)
+				+icon('arrow-long')

@@ -1,0 +1,10 @@
+section.webpage__latest-news.latest-news
+	.container
+		header.latest-news__header(data-aos="fade")
+			h2.latest-news__heading.heading Latest news
+			a.latest-news__more.more(href= isDark ? URLS.news.listingDark : URLS.news.listing) View all news
+				+icon('chevron-right')(width="20", height="20")
+		.row
+			each item in LATEST_NEWS_CARDS
+				.latest-news__item.col-12.col-lg-4
+					+latest-news-card(item)(data-aos="fade")

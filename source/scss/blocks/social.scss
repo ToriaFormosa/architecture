@@ -1,0 +1,105 @@
+.social {
+	$self: &;
+
+	@include list-reset;
+	display: flex;
+	flex-wrap: wrap;
+
+	&--contact {
+		#{$self}__link {
+			svg {
+				fill: $color-grey8;
+			}
+		}
+	}
+
+	&__item + &__item {
+		margin-left: 28px;
+	}
+
+	&__link {
+		display: flex;
+		width: 17px;
+		height: 17px;
+		justify-content: center;
+
+		svg {
+			display: block;
+			align-self: center;
+			fill: $color-default-white;
+			@include transition(fill);
+		}
+
+		@include hover {
+			outline: none;
+
+			svg {
+				fill: $color-yellow;
+			}
+		}
+
+		&:active {
+			opacity: 0.7;
+		}
+	}
+
+	/*.fb {
+		background-color: #3b5999;
+		border-color: #3b5999;
+		@include transition(all);
+
+		@include media(lg) {
+			&:hover svg {
+				fill: #3b5999;
+			}
+		}
+	}
+
+	.tw {
+		background-color: #55acee;
+		border-color: #55acee;
+		@include transition(all);
+
+		@include media(lg) {
+			&:hover svg {
+				fill: #55acee;
+			}
+		}
+	}
+
+	.g-plus {
+		background-color: #dd4b39;
+		border-color: #dd4b39;
+		@include transition(all);
+
+		@include media(lg) {
+			&:hover svg {
+				fill: #dd4b39;
+			}
+		}
+	}
+
+	.tumblr {
+		background-color: #2b4b6a;
+		border-color: #2b4b6a;
+		@include transition(all);
+
+		@include media(lg) {
+			&:hover svg {
+				fill: #2b4b6a;
+			}
+		}
+	}
+
+	.rss {
+		background-color: #fb7000;
+		border-color: #fb7000;
+		@include transition(all);
+
+		@include media(lg) {
+			&:hover svg {
+				fill: #fb7000;
+			}
+		}
+	}*/
+}

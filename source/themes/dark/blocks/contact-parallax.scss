@@ -1,0 +1,19 @@
+.contact-parallax {
+	&__form {
+		input,
+		textarea {
+			background-color: transparent;
+			border-bottom-color: $color-default-white;
+			color: $color-default-white;
+
+			&::placeholder {
+				opacity: 1;
+			}
+
+			@include hover {
+				color: $color-default-white;
+				border-color: $color-default-white;
+			}
+		}
+	}
+}

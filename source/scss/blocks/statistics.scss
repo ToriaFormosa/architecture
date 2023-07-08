@@ -1,0 +1,46 @@
+.statistics {
+	&__item {
+		text-align: center;
+		margin-bottom: 32px;
+
+		@include media(sm) {
+			display: flex;
+			align-items: center;
+			text-align: left;
+		}
+
+		@include media(lg) {
+			margin-bottom: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		br {
+			display: none;
+
+			@include media(sm) {
+				display: block;
+			}
+		}
+
+		&-text {
+			@include text(16px, 1.3125, $color-default-black);
+			text-transform: uppercase;
+			font-weight: 600;
+		}
+
+		&-value {
+			margin-bottom: 6px;
+
+			@include text(60px, 1.16, $color-yellow);
+			font-weight: 700;
+
+			@include media(sm) {
+				margin-bottom: 0;
+				margin-right: 24px;
+			}
+		}
+	}
+}

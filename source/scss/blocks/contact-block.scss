@@ -1,0 +1,97 @@
+.contact-block {
+	max-width: 496px;
+	background-color: $color-default-white;
+
+	@include media(lg) {
+		padding: 80px;
+	}
+
+	&__heading {
+		margin: 0 0 32px;
+		font-family: $font-family--secondary;
+
+		@include text(32px, 1.4, $color-default-black);
+		font-weight: 700;
+
+		span {
+			font-family: $font-family--third;
+		}
+	}
+
+	&__address {
+		max-width: 370px;
+		margin-bottom: 32px;
+
+		@include text(16px, 1.3125);
+		font-style: normal;
+
+		@include media(xl) {
+			margin-bottom: 60px;
+		}
+	}
+
+	&__phone {
+		margin: 0 0 32px;
+
+		@include media(xl) {
+			margin-bottom: 84px;
+		}
+
+		a {
+			font-family: $font-family--secondary;
+
+			@include text(32px, 1.4, $color-default-black);
+			font-weight: 700;
+
+			@include transition(color);
+
+			@include hover {
+				outline: none;
+				color: $color-yellow;
+			}
+		}
+	}
+
+	&__item {
+		@include text(16px, 1.3125);
+
+		@include media(sm) {
+			display: flex;
+			//align-items: center;
+		}
+
+		&-hint {
+			margin-bottom: 6px;
+
+			color: $color-default-black;
+			font-weight: 700;
+			flex-shrink: 0;
+
+			@include media(sm) {
+				margin-bottom: 0;
+				margin-right: 8px;
+			}
+		}
+
+		&-val {
+			a {
+				color: $color-grey;
+
+				@include transition(color);
+
+				&:focus {
+					outline: none;
+					color: $color-yellow;
+				}
+
+				@include hover {
+					color: $color-yellow;
+				}
+			}
+		}
+	}
+
+	&__item + &__item {
+		margin-top: 30px;
+	}
+}

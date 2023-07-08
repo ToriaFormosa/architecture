@@ -1,0 +1,24 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Home Default 2 Dark';
+	- let isHome = true; //- Если true то логотип не будет ссылкой
+	- let isDark = true;
+	- let currentPage = 1.08; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 1; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+	- let isRevolution = true; // Если true, то подключаем скрипты слайдера
+
+block header
+	include modules/header-3
+
+block content
+	include modules/hero
+	include modules/featured-projects
+	include modules/services
+	include modules/team-section
+	include modules/statistics
+	include modules/latest-news
+	include modules/partners
+
+
+block footer
+	include modules/footer

@@ -1,0 +1,22 @@
+.reviews-carousel {
+	&__title {
+		font-family: $font-family--secondary;
+		font-size: 35px;
+		font-weight: 700;
+		margin-bottom: 35px;
+		padding-top: 25px;
+
+		@include media(md) {
+			font-size: 40px;
+		}
+
+		@include media(lg) {
+			font-size: 48px;
+			margin-bottom: 64px;
+		}
+	}
+
+	&__item {
+		margin-top: 58px;
+	}
+}

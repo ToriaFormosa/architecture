@@ -1,0 +1,24 @@
+section.webpage__team-section.team-section
+	.team-section__inner.container
+		header.team-section__header(data-aos="fade")
+			h2.team-section__heading.heading Our magic team
+
+		ul.team-section__list.team-list.row
+			- let delayT3 = 0
+			- let path = 'img/picture/team/';
+
+			each it, index in ['1', '2', '3']
+				- delayT3 = index % 3 === 0 ? 0 : delayT3 + 200;
+				li.team-list__item.col-12.col-md-6.col-lg-4(data-aos="fade", data-aos-delay= delayT3)
+					if it.length > 1
+						a.card.card--send(href="#")
+							.card__send-text= it
+					else
+						.card.card--team(tabindex="0")
+							.card__image
+								img(src= path + it + ".jpg", srcset= path + it + "@2x.jpg", width="350", height="530", alt="")
+							.card__content
+								h3.card__heading Jack WIlshere
+								.card__text CEO / Founder
+								.card__bottom
+									+social('card__social', ['facebook', 'twitter', 'linkedin-original'])

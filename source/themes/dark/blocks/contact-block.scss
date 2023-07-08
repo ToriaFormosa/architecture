@@ -1,0 +1,19 @@
+.contact-block {
+	background-color: $color-dark;
+
+	&__heading {
+		color: $color-default-white;
+	}
+
+	&__phone {
+		a {
+			color: $color-default-white;
+		}
+	}
+
+	&__item {
+		&-hint {
+			color: $color-default-white;
+		}
+	}
+}

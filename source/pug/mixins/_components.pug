@@ -1,0 +1,15 @@
+mixin input(type, inputName, placeholder, value)
+	if type === 'text' || type === 'email' || type === 'password'
+		input.custom-input(type=type, name=inputName, value=value, placeholder=placeholder)&attributes(attributes)
+	if type === 'textarea'
+		textarea.custom-input(name=inputName, value=value, placeholder=placeholder)&attributes(attributes)
+	if type === 'search'
+		input(type='search', name=inputName, value=value, placeholder=placeholder)&attributes(attributes)
+	if type === 'subs'
+		form.label-subs.js-form-validate(action='php/mail.php', method='POST')
+			label.field
+				input(type='email', name=inputName, value=value, placeholder=placeholder)&attributes(attributes)
+			.field-error(style='display: none')
+			button(type='submit') Subscribe
+
+

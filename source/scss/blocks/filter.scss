@@ -1,0 +1,37 @@
+.filter {
+	$self: &;
+
+	&__item {
+		margin-right: 20px;
+		padding: 0;
+		font-family: $font-family--main;
+
+		@include text(16px, 1.3125, $color-default-black);
+		font-weight: 600;
+		text-transform: capitalize;
+		background-color: transparent;
+		border: none;
+		appearance: none;
+		cursor: pointer;
+
+		@include transition(color);
+
+		@include media(xl) {
+			margin-right: 28px;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&:hover,
+		&:focus {
+			outline: none;
+			color: $color-yellow;
+		}
+
+		&--active {
+			color: $color-yellow;
+		}
+	}
+}

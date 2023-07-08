@@ -1,0 +1,54 @@
+header.header.__js_fixed-header
+	.header__inner
+		// Logo
+		+logo(isHome, 'header__logo')
+
+		a.header__purchase.btn(href='#')
+			span.header__purchase-text purchase
+			+icon('wallet')(width="16", height="16")
+
+		// Burger
+		button.header__menu-toggle.menu-toggle(type="button")
+			span.visually-hidden Menu
+
+// Site menu
+.mobile-canvas.__js_mobile-canvas
+	button.mobile-canvas__close(type="button")
+		+icon('close')(width="24", height="24")
+		span.visually-hidden Close menu
+
+	// Lang switcher
+	ul.mobile-canvas__lang-switcher.lang-switcher.lang-switcher--menu
+		li.lang-switcher__item
+			a.lang-switcher__link.lang-switcher__link--current Eng
+		li.lang-switcher__item
+			a.lang-switcher__link(href="#") Fra
+		li.lang-switcher__item
+			a.lang-switcher__link(href="#") Ger
+
+	nav.mobile-canvas__nav.navigation
+		ul.navigation__list
+			each item, index in INTRO_MENU
+				if item.currentSection === currentSection && item.currentPage === currentPage
+					li.navigation__item.navigation__item--current
+						a.navigation__link= item.text
+						if item.submenu
+							+navigation-dropdown-home(item.submenu)
+				else if item.currentSection === currentSection && item.currentPage !== currentPage
+					li.navigation__item.navigation__item--current
+						a.navigation__link(href= item.url)= item.text
+						if item.submenu
+							+navigation-dropdown-home(item.submenu)
+				else
+					li.navigation__item
+						a.navigation__link.animsition-link(href= item.url)= item.text
+						if item.submenu
+							+navigation-dropdown-home(item.submenu)
+
+
+	.mobile-canvas__bottom
+		.mobile-canvas__copy © 2021 <span>Larson.</span> All Rights Reserved. <br>
+			| Development by <span>Paul Studio</span>
+		+social('mobile-canvas__social', ['facebook', 'twitter', 'google-plus', 'linkedin-original'])
+
+

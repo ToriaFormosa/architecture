@@ -1,0 +1,46 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Home Video Dark';
+	- let isHome = true; //- Если true то логотип не будет ссылкой
+	- let isDark = true;
+	- let currentPage = 1.12; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 1; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	section.video-section
+		.video-section__inner.container
+			img(src="img/home-video-bg.jpg", srcset="img/home-video-bg@2x.jpg", width="1800", height="1020", alt="")
+
+			+logo(isHome, 'video-section__logo logo--large logo--white')
+			.video-section__bottom
+				.video-section__copy © LarsonR 2020.
+				ul.video-section__lang-switcherul.lang-switcher.lang-switcher--line
+					li.lang-switcher__item
+						a.lang-switcher__link.lang-switcher__link--current Eng
+					li.lang-switcher__item
+						a.lang-switcher__link(href="#") Fra
+					li.lang-switcher__item
+						a.lang-switcher__link(href="#") Ger
+
+	include modules/header
+
+block content
+	.projects-masonry.projects-masonry--pt
+		- let pathM = 'img/picture/home-video/'
+		.projects-masonry__inner.container
+			.row.__js_projects-grid
+				each item, index in PROJECTS_MASONRY
+					- let colCl = item.w > item.h ? ' col-12  col-lg-6' : ' col-12 col-md-6 col-lg-4 col-xl-3';
+					.projects-masonry__item.__js_masonry-item(class= colCl, data-order= (index + 1))
+						.preview-card
+							.preview-card__image
+								img(src= pathM + item.img + '.jpg', srcset= pathM + item.img + '@2x.jpg', width= item.w, height= item.h, alt="")
+							.preview-card__content
+								h3.preview-card__heading Interior in Spain
+								.preview-card__text Projects for many large domestic and foreign corporations, enterprises in many elds such
+								a.preview-card__btn.link-arrow(href= isDark ? URLS.news.postDark : URLS.news.post) Learn more
+									+icon('chevron-right')(width="20", height="20")
+
+
+block footer
+	include modules/footer

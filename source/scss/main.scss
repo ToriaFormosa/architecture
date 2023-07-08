@@ -1,0 +1,207 @@
+/* ------------------------------------------------------------------------------
+
+  1.  Global
+
+
+
+-------------------------------------------------------------------------------*/
+
+@import "utils/variables";
+@import "utils/functions";
+@import "utils/mixins";
+//ignorescss @import "aos.css";
+//ignorescss @import "swiper-bundle.css";
+//ignorescss @import "animsition.min.css";
+//ignorescss @import "jquery.pagepiling.css";
+//ignorescss @import "jquery.fancybox.css";
+
+/*-------------------------------------------------------------------------------
+  1. Global
+-------------------------------------------------------------------------------*/
+
+/* 1.1 General */
+@import "common/global";
+@import "common/components";
+
+/* 1.2  Typography */
+@import "common/fonts";
+
+/* 1.3 Utils */
+@import "common/utils";
+
+/* 1.4 Buttons */
+@import "blocks/btn";
+
+/* 1.5 Fields */
+@import "blocks/field";
+
+/* 1.7 Heading */
+@import "blocks/heading";
+@import "blocks/heading-small";
+
+/* 1.8 Menu toggle button */
+@import "blocks/menu-toggle";
+
+/* 1.11 Navigation */
+@import "blocks/navigation";
+
+/* 1.12 Logo */
+@import "blocks/logo";
+
+/* 1.13 Social */
+@import "blocks/social";
+
+/* 1.14 More */
+@import "blocks/more";
+@import "blocks/play-btn";
+
+/* 1.17 Filter */
+@import "blocks/filter";
+
+/* 1.20 Overlay */
+@import "blocks/overlay";
+
+/* 1.22 Preloader */
+@import "blocks/preloader";
+
+/* 1.23 Webpage */
+@import "blocks/webpage";
+
+/* 1.24 Language switcher */
+@import "blocks/lang-switcher";
+
+/*-------------------------------------------------------------------------------
+  2. Header
+-------------------------------------------------------------------------------*/
+
+/* 2.1 Header type 1 */
+@import "blocks/mobile-canvas";
+@import "blocks/header";
+
+/*-------------------------------------------------------------------------------
+  3. Footer
+-------------------------------------------------------------------------------*/
+
+/* 3.1 Footer type 1 */
+@import "blocks/footer";
+
+/*-------------------------------------------------------------------------------
+  4. Main
+-------------------------------------------------------------------------------*/
+
+/* 4.17 Timer */
+@import "blocks/timer";
+
+/* 4.33 Menu */
+//@import "blocks/menu";
+
+/* 4.52 Error 404 */
+@import "blocks/page-404";
+
+/* 4.58 Coming soon */
+@import "blocks/coming-soon";
+
+/* Link with arrow */
+@import "blocks/link-arrow";
+
+/* Tab rev slider */
+@import "blocks/slide-tab";
+
+/* Statistics block */
+@import "blocks/card";
+
+/* Review card */
+@import "blocks/review-card";
+
+/* News preview card */
+@import "blocks/preview-card";
+
+/* About us block */
+@import "blocks/about-section";
+
+/* Hero block */
+@import "blocks/hero";
+
+/* Services block */
+@import "blocks/services-section";
+
+/* Statistics block */
+@import "blocks/statistics";
+
+/* Latest projects carousel block */
+@import "blocks/latest-projects";
+
+/* Partners block */
+@import "blocks/partners";
+
+/* Partners block */
+@import "blocks/reviews-carousel";
+
+/* Latest news block */
+@import "blocks/latest-news";
+
+/* Latest news block */
+@import "blocks/projects-masonry";
+
+/* Latest news block */
+@import "blocks/projects-carousel";
+
+/* Featured projects block */
+@import "blocks/featured-projects";
+
+/* Project detail blocks */
+@import "blocks/projects-slider";
+@import "blocks/project-meta";
+@import "blocks/project-designer";
+@import "blocks/steps";
+@import "blocks/process";
+@import "blocks/services-provided";
+@import "blocks/architects";
+
+/* Services section */
+@import "blocks/services";
+
+/* Home Grid page blocks */
+@import "blocks/projects-grid";
+
+/* Team list block */
+@import "blocks/team-list";
+
+/* News blocks */
+@import "blocks/sidebar";
+@import "blocks/news-listing";
+@import "blocks/single-post";
+@import "blocks/quote";
+
+/* Blocks for services pages */
+@import "blocks/service-card";
+@import "blocks/services-list";
+@import "blocks/single-service-block";
+
+/* Feedback block */
+@import "blocks/feedback";
+
+/* Contact block */
+@import "blocks/contact-block";
+
+/* Block in About page */
+@import "blocks/about-block";
+
+/* Map block */
+@import "blocks/map";
+
+/* Video section in homepage */
+@import "blocks/video-section";
+
+/* Main slider */
+@import "blocks/main-slider";
+
+/* Article */
+@import "blocks/article";
+
+/* Home parallax */
+@import "blocks/welcome";
+@import "blocks/home-parallax";
+@import "blocks/services";
+@import "blocks/slider-parallax";
+@import "blocks/contact-parallax";

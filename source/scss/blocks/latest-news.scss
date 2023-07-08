@@ -1,0 +1,45 @@
+.latest-news {
+	padding-bottom: 10px;
+
+	&__header {
+		margin-bottom: 32px;
+
+		@include media(md) {
+			display: flex;
+			align-items: center;
+			margin-bottom: 48px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 70px;
+		}
+	}
+
+	&__heading {
+		margin: 0 0 16px;
+
+		@include media(md) {
+			margin-bottom: 0;
+			margin-right: auto;
+		}
+	}
+
+	&__more {
+		@include media(md) {
+			flex-shrink: 0;
+			margin-left: 30px;
+		}
+
+		@include media(xl) {
+			margin-left: 45px;
+		}
+	}
+
+	&__item {
+		margin-bottom: 36px;
+
+		@include media(lg) {
+			margin-bottom: 0;
+		}
+	}
+}

@@ -1,0 +1,70 @@
+.steps {
+	@include list-reset;
+	counter-reset: steps;
+
+	&__item {
+		position: relative;
+		counter-increment: steps;
+		margin-bottom: 32px;
+		padding-left: 70px;
+
+		@include media(sm) {
+			padding-left: 100px;
+			margin-bottom: 48px;
+		}
+
+		@include media(lg) {
+			margin-bottom: 64px;
+			padding-left: 160px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 96px;
+			padding-left: 180px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&::before {
+			content: "0" counter(steps) ".";
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			font-family: $font-family--secondary;
+
+			@include text(36px, 1, $color-default-black);
+			font-weight: 700;
+
+			@include media(sm) {
+				font-size: 48px;
+			}
+
+			@include media(lg) {
+				font-size: 64px;
+			}
+
+			@include media(xl) {
+				font-size: 80px;
+			}
+		}
+
+		&-title {
+			margin: 0 0 16px;
+			font-family: $font-family--secondary;
+
+			@include text(25px, 1, $color-default-black);
+			font-weight: 700;
+
+			@include media(xl) {
+				margin-bottom: 30px;
+			}
+		}
+
+		&-text {
+			max-width: 522px;
+		}
+	}
+}

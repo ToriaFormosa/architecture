@@ -1,0 +1,107 @@
+section.webpage__latest-projects.latest-projects
+	header.latest-projects__header.container(data-aos="fade")
+		h2.latest-projects__heading.heading Latest projects
+
+		// Filter latest projects
+		.latest-projects__filter.filter
+			each item in ['all', 'Building', 'Interior']
+				- let filterVal = item === 'all' ? '*' : '.__js_' + item.toLowerCase();
+				- let activeClass = item === 'all' ? ' filter__item--active' : '';
+				button(class="filter__item" + activeClass + ' __js_latest-projects-filter-item', type="button", data-filter= filterVal)= item
+
+		a.latest-projects__more.more(href= isDark ? URLS.projects.gridDark : URLS.projects.grid) View all projects
+			+icon('chevron-right')(width="20", height="20")
+
+	.latest-projects__inner.container(data-aos="fade")
+		.latest-projects__carousel.swiper-container.__js_latest-projects-carousel
+			.swiper-wrapper
+				a.card.swiper-slide.__js_building(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+					.card__image
+						img(src="img/picture/latest-projects/1.jpg", srcset="img/picture/latest-projects/1@2x.jpg", width="430", height="573", alt="")
+					.card__content
+						h3.card__heading Villa <br>In <br>London
+						.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+						.card__bottom
+							span.card__link
+								| See project
+								+icon('chevron-right')(width="20", height="20")
+
+				a.card.swiper-slide.__js_building(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+					.card__image
+						img(src="img/picture/latest-projects/2.jpg", srcset="img/picture/latest-projects/2@2x.jpg", width="430", height="573", alt="")
+					.card__content
+						h3.card__heading Spain <br>Working <br>Building
+						.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+						.card__bottom
+							span.card__link
+								| See project
+								+icon('chevron-right')(width="20", height="20")
+
+				a.card.swiper-slide.__js_interior(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+					.card__image
+						img(src="img/picture/latest-projects/3.jpg", srcset="img/picture/latest-projects/3@2x.jpg", width="430", height="573", alt="")
+					.card__content
+						h3.card__heading House <br>Near <br>Boston
+						.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+						.card__bottom
+							span.card__link
+								| See project
+								+icon('chevron-right')(width="20", height="20")
+
+				a.card.swiper-slide.__js_building(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+					.card__image
+						img(src="img/picture/latest-projects/4.jpg", srcset="img/picture/latest-projects/4@2x.jpg", width="430", height="573", alt="")
+					.card__content
+						h3.card__heading Villa <br>On The <br>River
+						.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+						.card__bottom
+							span.card__link
+								| See project
+								+icon('chevron-right')(width="20", height="20")
+				//-
+
+				a.card.swiper-slide.__js_building(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+					.card__image
+						img(src="img/picture/latest-projects/1.jpg", srcset="img/picture/latest-projects/1@2x.jpg", width="430", height="573", alt="")
+					.card__content
+						h3.card__heading Villa <br>In <br>London
+						.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+						.card__bottom
+							span.card__link
+								| See project
+								+icon('chevron-right')(width="20", height="20")
+
+				a.card.swiper-slide.__js_building(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+					.card__image
+						img(src="img/picture/latest-projects/2.jpg", srcset="img/picture/latest-projects/2@2x.jpg", width="430", height="573", alt="")
+					.card__content
+						h3.card__heading Spain <br>Working <br>Building
+						.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+						.card__bottom
+							span.card__link
+								| See project
+								+icon('chevron-right')(width="20", height="20")
+
+				a.card.swiper-slide.__js_interior(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+					.card__image
+						img(src="img/picture/latest-projects/3.jpg", srcset="img/picture/latest-projects/3@2x.jpg", width="430", height="573", alt="")
+					.card__content
+						h3.card__heading House <br>Near <br>Boston
+						.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+						.card__bottom
+							span.card__link
+								| See project
+								+icon('chevron-right')(width="20", height="20")
+
+				a.card.swiper-slide.__js_building(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+					.card__image
+						img(src="img/picture/latest-projects/4.jpg", srcset="img/picture/latest-projects/4@2x.jpg", width="430", height="573", alt="")
+					.card__content
+						h3.card__heading Villa <br>On The <br>River
+						.card__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+						.card__bottom
+							span.card__link
+								| See project
+								+icon('chevron-right')(width="20", height="20")
+
+			.swiper-pagination

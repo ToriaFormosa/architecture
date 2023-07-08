@@ -1,0 +1,27 @@
+.mobile-canvas {
+	$self: &;
+
+	background-color: $color-dark;
+
+	@include media(lg) {
+		background-color: transparent;
+	}
+
+	&__copy {
+		span {
+			color: $color-default-white;
+		}
+	}
+
+	&__phone {
+		@include media(lg) {
+			color: $color-default-white;
+		}
+	}
+
+	&__close {
+		svg {
+			fill: $color-default-white;
+		}
+	}
+}

@@ -1,0 +1,190 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | News Grid 2 Dark';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let isDark = true;
+	- let currentPage = 3.09; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 3; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+	article.article.article--news
+		header.article__header
+			.container
+				h1.article__heading.heading.heading--size-large News
+
+				// Filter projects
+				.article__filter.filter
+					each item in ['all', 'inspiration', 'decoration', 'plants', 'architecture', 'interior']
+						- let filterVal = item === 'all' ? '*' : '.__js_' + item;
+						- let activeClass = item === 'all' ? ' filter__item--active' : '';
+						button(class="filter__item" + activeClass + ' __js_filter-btn', type="button", data-filter= filterVal)= item
+		.article__main.article__main--width-full.container
+			ul.news-listing.row.__js_news-grid
+				li.news-listing__item.news-listing__item--high.col-12.col-md-6.col-xl-3.__js_masonry-item.__js_interior
+					.card.card--small.card--masonry.card--news
+						.card__image
+							img(src="img/picture/news/grid/item-1.jpg", srcset="img/picture/news/grid/item-1@2x.jpg", alt="")
+						.card__content.card__content--full
+							.card__date Jule 03, 2020
+							h3.card__heading Descover Interior
+							.card__text Projects for many large domestic <br> and foreign corporations, <br> enterprises in many elds such
+							.card__bottom
+								a.card__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+									| Learn more
+									+icon('chevron-right')(width="20", height="20")
+
+				li.news-listing__item.news-listing__item--high.col-12.col-md-6.col-xl-3.__js_masonry-item.__js_architecture
+					.card.card--small.card--masonry.card--news
+						.card__image
+							img(src="img/picture/news/grid/item-2.jpg", srcset="img/picture/news/grid/item-2@2x.jpg", alt="")
+						.card__content.card__content--full
+							.card__date Jule 03, 2020
+							h3.card__heading Samuel Gawith
+							.card__text Projects for many large domestic <br> and foreign corporations, <br> enterprises in many elds such
+							.card__bottom
+								a.card__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+									| Learn more
+									+icon('chevron-right')(width="20", height="20")
+
+				li.news-listing__item.news-listing__item--high.col-12.col-md-6.col-xl-3.__js_masonry-item.__js_building
+					.card.card--small.card--masonry.card--news
+						.card__image
+							img(src="img/picture/news/grid/item-3.jpg", srcset="img/picture/news/grid/item-3@2x.jpg", alt="")
+						.card__content.card__content--full
+							.card__date Jule 03, 2020
+							h3.card__heading Redesign Exterior Of EMME Officie
+							.card__text Projects for many large domestic <br> and foreign corporations, <br> enterprises in many elds such
+							.card__bottom
+								a.card__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+									| Learn more
+									+icon('chevron-right')(width="20", height="20")
+
+				li.news-listing__item.news-listing__item--high.col-12.col-md-6.col-xl-3.__js_masonry-item.__js_interior
+					.card.card--small.card--masonry.card--news
+						.card__image
+							img(src="img/picture/news/grid/item-4.jpg", srcset="img/picture/news/grid/item-4@2x.jpg", alt="")
+						.card__content.card__content--full
+							.card__date Jule 03, 2020
+							h3.card__heading Geometric Square Villa In Germany
+							.card__text Projects for many large domestic <br> and foreign corporations, <br> enterprises in many elds such
+							.card__bottom
+								a.card__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+									| Learn more
+									+icon('chevron-right')(width="20", height="20")
+
+				li.news-listing__item.news-listing__item--high.col-12.col-md-6.col-xl-3.__js_masonry-item.__js_architecture
+					.card.card--small.card--masonry.card--news
+						.card__image
+							img(src="img/picture/news/grid/item-5.jpg", srcset="img/picture/news/grid/item-5@2x.jpg", alt="")
+						.card__content.card__content--full
+							.card__date Jule 03, 2020
+							h3.card__heading Discover Architecture Of Bario Lodge
+							.card__text Projects for many large domestic <br> and foreign corporations, <br> enterprises in many elds such
+							.card__bottom
+								a.card__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+									| Learn more
+									+icon('chevron-right')(width="20", height="20")
+
+				li.news-listing__item.news-listing__item--high.col-12.col-md-6.col-xl-3.__js_masonry-item.__js_architecture
+					.card.card--small.card--masonry.card--news
+						.card__image
+							img(src="img/picture/news/grid/item-6.jpg", srcset="img/picture/news/grid/item-6@2x.jpg", alt="")
+						.card__content.card__content--full
+							.card__date Jule 03, 2020
+							h3.card__heading Boxed Villa For Andy Garmar In Florencia
+							.card__text Projects for many large domestic <br> and foreign corporations, <br> enterprises in many elds such
+							.card__bottom
+								a.card__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+									| Learn more
+									+icon('chevron-right')(width="20", height="20")
+
+				li.news-listing__item.news-listing__item--high.col-12.col-md-6.col-xl-3.__js_masonry-item.__js_architecture
+					.card.card--small.card--masonry.card--news
+						.card__image
+							img(src="img/picture/news/grid/item-7.jpg", srcset="img/picture/news/grid/item-7@2x.jpg", alt="")
+						.card__content.card__content--full
+							.card__date Jule 03, 2020
+							h3.card__heading Living Room Interior Design For Apartment
+							.card__text Projects for many large domestic <br> and foreign corporations, <br> enterprises in many elds such
+							.card__bottom
+								a.card__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+									| Learn more
+									+icon('chevron-right')(width="20", height="20")
+
+				li.news-listing__item.news-listing__item--high.col-12.col-md-6.col-xl-3.__js_masonry-item.__js_architecture
+					.card.card--small.card--masonry.card--news
+						.card__image
+							img(src="img/picture/news/grid/item-8.jpg", srcset="img/picture/news/grid/item-8@2x.jpg", alt="")
+						.card__content.card__content--full
+							.card__date Jule 03, 2020
+							h3.card__heading Bauhaus Architecture Studio
+							.card__text Projects for many large domestic <br> and foreign corporations, <br> enterprises in many elds such
+							.card__bottom
+								a.card__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+									| Learn more
+									+icon('chevron-right')(width="20", height="20")
+
+				li.news-listing__item.news-listing__item--high.col-12.col-md-6.col-xl-3.__js_masonry-item.__js_architecture
+					.card.card--small.card--masonry.card--news
+						.card__image
+							img(src="img/picture/news/grid/item-9.jpg", srcset="img/picture/news/grid/item-9@2x.jpg", alt="")
+						.card__content.card__content--full
+							.card__date Jule 03, 2020
+							h3.card__heading Living Room Interior Design For Apartment
+							.card__text Projects for many large domestic <br> and foreign corporations, <br> enterprises in many elds such
+							.card__bottom
+								a.card__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+									| Learn more
+									+icon('chevron-right')(width="20", height="20")
+
+				li.news-listing__item.news-listing__item--high.col-12.col-md-6.col-xl-3.__js_masonry-item.__js_architecture
+					.card.card--small.card--masonry.card--news
+						.card__image
+							img(src="img/picture/news/grid/item-10.jpg", srcset="img/picture/news/grid/item-10@2x.jpg", alt="")
+						.card__content.card__content--full
+							.card__date Jule 03, 2020
+							h3.card__heading Rennovate Exterior With Garden On Top
+							.card__text Projects for many large domestic <br> and foreign corporations, <br> enterprises in many elds such
+							.card__bottom
+								a.card__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+									| Learn more
+									+icon('chevron-right')(width="20", height="20")
+
+				li.news-listing__item.news-listing__item--high.col-12.col-md-6.col-xl-3.__js_masonry-item.__js_architecture
+					.card.card--small.card--masonry.card--news
+						.card__image
+							img(src="img/picture/news/grid/item-11.jpg", srcset="img/picture/news/grid/item-11@2x.jpg", alt="")
+						.card__content.card__content--full
+							.card__date Jule 03, 2020
+							h3.card__heading Living Room Interior Design For Apartment
+							.card__text Projects for many large domestic <br> and foreign corporations, <br> enterprises in many elds such
+							.card__bottom
+								a.card__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+									| Learn more
+									+icon('chevron-right')(width="20", height="20")
+
+				li.news-listing__item.news-listing__item--high.col-12.col-md-6.col-xl-3.__js_masonry-item.__js_architecture
+					.card.card--small.card--masonry.card--news
+						.card__image
+							img(src="img/picture/news/grid/item-12.jpg", srcset="img/picture/news/grid/item-12@2x.jpg", alt="")
+						.card__content.card__content--full
+							.card__date Jule 03, 2020
+							h3.card__heading House On The River
+							.card__text Projects for many large domestic <br> and foreign corporations, <br> enterprises in many elds such
+							.card__bottom
+								a.card__link(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+									| Learn more
+									+icon('chevron-right')(width="20", height="20")
+
+
+
+
+
+
+
+
+block footer
+	include modules/footer

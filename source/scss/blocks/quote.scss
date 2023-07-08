@@ -1,0 +1,62 @@
+.quote {
+	padding: 20px 20px 20px 70px;
+	border: 4px solid $color-yellow;
+	position: relative;
+
+	@include media(lg) {
+		padding: 37px 50px 29px 123px;
+	}
+
+	&::before {
+		content: ",,";
+		display: block;
+		font-family: $font-family--main;
+		font-size: 70px;
+		line-height: 70px;
+		font-weight: 600;
+		letter-spacing: -5px;
+		color: $color-yellow;
+		position: absolute;
+		top: -21px;
+		left: 18px;
+
+		@include media(lg) {
+			font-size: 100px;
+			line-height: 100px;
+			top: -19px;
+			left: 34px;
+		}
+	}
+
+	p {
+		font-family: $font-family--secondary;
+		font-size: 18px;
+		line-height: 30px;
+		font-weight: 600;
+		color: $color-default-black;
+		margin: 0 0 28px;
+
+		@include media(lg) {
+			font-size: 20px;
+			line-height: 35px;
+		}
+	}
+
+	&__name,
+	&__position {
+		display: block;
+		font-size: 14px;
+		line-height: 22px;
+		font-style: normal;
+
+		@include media(lg) {
+			font-size: 16px;
+			line-height: 26px;
+		}
+	}
+
+	&__name {
+		color: $color-default-black;
+		font-weight: 700;
+	}
+}

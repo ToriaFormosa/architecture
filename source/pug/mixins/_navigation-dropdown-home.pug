@@ -1,0 +1,23 @@
+mixin navigation-dropdown-home(object)
+	.navigation__dropdown.navigation__dropdown--columns
+		.navigation__dropdown-wrapper
+			.navigation__dropdown-column
+				.navigation__dropdown-column-title Light
+				ul.navigation__dropdown-list
+					each item in object.white
+						if item.currentPage === currentPage
+							li.navigation__dropdown-item.navigation__dropdown-item--current
+								a= item.text
+						else
+							li.navigation__dropdown-item
+								a.animsition-link(href= item.url)= item.text
+			.navigation__dropdown-column
+				.navigation__dropdown-column-title Dark
+				ul.navigation__dropdown-list
+					each item in object.dark
+						if item.currentPage === currentPage
+							li.navigation__dropdown-item.navigation__dropdown-item--current
+								a= item.text
+						else
+							li.navigation__dropdown-item
+								a.animsition-link(href= item.url)= item.text

@@ -1,0 +1,27 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Home Grid';
+	- let isHome = true; //- Если true то логотип не будет ссылкой
+	- let isDark = false;
+	- let currentPage = 1.04; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 1; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+	- let bodyModClass = 'webpage--home-grid';
+
+block header
+	include modules/header-2
+
+block content
+	.projects-grid
+		.projects-grid__inner.container
+			ul.projects-grid__list.row
+				each item, index in HOME_GRID_CARDS
+					li.projects-grid__item.col-md-6.col-lg-4.col-xl-3
+						a.card.card--transparent(href= isDark ? URLS.projects.detailDark : URLS.projects.detail)
+							.card__content
+								.card__tag= item.tag
+								h3.card__heading= item.title
+								.card__text Founded in 2007, Sparch is specializing in providing innovative services such as websitFounded in 2007
+
+
+block footer
+	include modules/footer-2

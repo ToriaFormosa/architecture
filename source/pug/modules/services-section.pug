@@ -1,0 +1,17 @@
+section.webpage__services-section.services-section
+	.services-section__inner.container
+		.row
+			.services-section__content.col-12.col-md-6.order-md-1.ml-auto
+				h2.services-section__heading.heading-small(data-aos="fade") Services
+				.services-section__pseudoheading.heading(data-aos="fade") Thought out to the smallest detail
+				ul.services-section__list
+					- let serviceHref = isDark ? URLS.projects.detailDark : URLS.projects.detail;
+					each item in ['Logo Design', 'Business Card Design', 'Stationery Design', 'Letterhead Design', 'Brouchers']
+						li.services-section__item(data-aos="fade")
+							a.services-section__link(href= serviceHref)= item
+			.col-12.col-md-6.col-lg-5
+				.services-section__image(data-aos="fade")
+					img(src="img/picture/about-section-image.jpg", srcset="img/picture/about-section-image@2x.jpg", width="426", height="573", alt="House")
+					a.services-section__play.play-btn.fancybox(href="#video")
+						+icon('play')(class="play-btn__icon", width="18", height="18")
+						span.visually-hidden Play video

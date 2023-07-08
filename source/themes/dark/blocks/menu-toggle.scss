@@ -1,0 +1,9 @@
+.menu-toggle {
+	$self: &;
+
+	&::before,
+	&::after {
+		content: "";
+		border-top-color: $color-default-white;
+	}
+}

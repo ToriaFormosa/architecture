@@ -1,0 +1,64 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Single services Dark';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let isDark = true;
+	- let currentPage = 4.12; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 4; // // Для каждой раздела уникален. Home -1, projects - 2, news - 3, pages - 4
+
+block header
+	include modules/header
+
+block content
+	article.article
+		header.article__header
+			.container
+				h1.article__heading.heading.heading--size-large Architecture
+
+		.article__single-service-image.container(data-aos="fade")
+			img(src="img/picture/single-services/hero.jpg", srcset="img/picture/single-services/hero@2x.jpg", width="1110", height="538", alt="")
+
+		.article__main.article__main--width-small.container
+			.single-service-block
+				h2(data-aos="fade") Methods for Everyone
+
+				p(data-aos="fade") Everything along the way, to and from, fascinated her: every pebble, ant, stick, leaf, blade of grass, and crack in the sidewalk was something to be picked up, looked at, tasted, smelled, and shaken. Everything was interesting to her. She knew nothing. I knew everything…been there, done that. She was in the moment, I was in the past. She was mindful. I was mindless.
+
+				p(data-aos="fade") One touch of a red-hot stove is usually all we need to avoid that kind of discomfort in the future. The same is true as we experience the emotional sensation of stress from our first instances of social rejection or ridicule. We quickly learn to fear and thus automatically avoid potentially stressful situations of all kinds, including the most common of all: making mistakes.
+
+			.single-service-block(data-aos="fade")
+				img(src="img/picture/single-services/drawing.jpg", srcset="img/picture/single-services/drawing@2x.jpg", width="730", height="405", alt="")
+
+			.single-service-block
+				h2(data-aos="fade") Culture
+
+				p(data-aos="fade") Everything along the way, to and from, fascinated her: every pebble, ant, stick, leaf, blade of grass, and crack in the sidewalk was something to be picked up, looked at, tasted, smelled, and shaken. Everything was interesting to her. She knew nothing. I knew everything…been there, done that. She was in the moment, I was in the past. She was mindful. I was mindless.
+
+			.single-service-block
+				h2(data-aos="fade") Work
+
+				p(data-aos="fade") One touch of a red-hot stove is usually all we need to avoid that kind of discomfort in the future. The same is true as we experience the emotional sensation of stress from our first instances of social rejection or ridicule. We quickly learn to fear and thus automatically avoid potentially stressful situations of all kinds, including the most common of all: making mistakes.
+
+			section.article__feedback.feedback
+				h2.feedback__heading.heading(data-aos="fade") Live a reply
+
+				form.js-form-validate(action='php/mail.php', method='POST')
+					.row
+						.feedback__field-wrapper.col-12.col-md-6(data-aos="fade")
+							label.field(aria-label="Name")
+								input(type="text", name="name", placeholder="Name*", required)
+							.field-error(style='display: none')
+						.feedback__field-wrapper.col-12.col-md-6(data-aos="fade")
+							label.field(aria-label="Email")
+								input(type="email", name="email", placeholder="Email*", required)
+							.field-error(style='display: none')
+						.feedback__field-wrapper.col-12(data-aos="fade")
+							label.field(aria-label="Comment")
+								textarea(name="comment", placeholder="Comment")
+							.field-error(style='display: none')
+
+					button.btn(type="submit", data-aos="fade") Post comment
+
+
+block footer
+	include modules/footer

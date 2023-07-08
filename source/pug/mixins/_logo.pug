@@ -1,0 +1,13 @@
+mixin logo(isHome, cl)
+	- let href = isDark ? URLS.home.defaultDark : URLS.home.default;
+	if (isHome)
+		a(class= cl + " logo")
+			span.logo__large Larson
+			span.logo__small Architecture studio
+	else
+		a(class= cl + " logo animsition-link", href= href)
+			span.logo__large Larson
+			span.logo__small Architecture studio
+
+
+

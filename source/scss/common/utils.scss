@@ -1,0 +1,136 @@
+.visually-hidden {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+}
+
+.relative {
+	position: relative;
+}
+
+.d-none {
+	display: none !important;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.lg-d-flex {
+	@include media(lg) {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+	}
+}
+
+.bg-dark {
+	@media (max-width: 991px) {
+		background-color: rgba(0, 0, 0, 0.6) !important;
+	}
+}
+
+.bg-light {
+	@media (max-width: 991px) {
+		background-color: rgba(255, 255, 255, 0.6) !important;
+	}
+}
+
+.field-error {
+	font-size: 16px;
+	line-height: 20px;
+	//color: $color-orange--dark;
+	margin-bottom: 15px;
+	margin-top: 5px;
+}
+
+.grid-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+
+	@include media(md) {
+		margin: 0 -10px;
+	}
+
+	@include media(xl) {
+		margin: 0 -25px;
+	}
+}
+
+.color-yellow {
+	color: $color-yellow;
+}
+
+/* swiper */
+
+.swiper-pagination {
+	position: static;
+
+	margin-top: 32px;
+
+	@include media(sm) {
+		margin-top: 40px;
+	}
+
+	@include media(md) {
+		margin-top: 60px;
+	}
+
+	@include media(lg) {
+		margin-top: 80px;
+	}
+
+	@include media(xl) {
+		margin-top: 100px;
+	}
+}
+
+.swiper-container-horizontal > .swiper-scrollbar {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 0;
+	height: 4px;
+	width: 100%;
+	background-color: transparent;
+}
+
+.swiper-pagination-bullets {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.swiper-pagination-bullet {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: $color-grey4;
+	margin: 0 4px !important;
+	opacity: 1;
+
+	@include media(md) {
+		width: 12px;
+		height: 12px;
+		margin: 0 8px !important;
+	}
+
+	&-active {
+		background-color: $color-yellow;
+	}
+
+	&:hover,
+	&:focus {
+		outline: none;
+	}
+}

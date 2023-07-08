@@ -1,0 +1,47 @@
+.welcome {
+	max-width: 480px;
+
+	&__subtitle {
+		font-size: 16px;
+		line-height: 26px;
+		margin-bottom: 14px;
+	}
+
+	&__title {
+		font-family: $font-family--secondary;
+		font-size: 40px;
+		line-height: 45px;
+		font-weight: bold;
+		text-transform: uppercase;
+
+		@include media(sm) {
+			font-size: 55px;
+			line-height: 60px;
+		}
+
+		@include media(md) {
+			font-size: 75px;
+			line-height: 80px;
+		}
+
+		@include media(lg) {
+			font-size: 90px;
+			line-height: 105px;
+		}
+
+		span {
+			color: $color-yellow;
+		}
+	}
+
+	&__line {
+		width: 28%;
+		height: 4px;
+		background-color: $color-yellow;
+		margin-top: 50px;
+
+		@include media(lg) {
+			margin-top: 100px;;
+		}
+	}
+}

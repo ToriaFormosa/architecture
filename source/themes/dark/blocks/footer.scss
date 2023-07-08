@@ -1,0 +1,17 @@
+.footer {
+	$self: &;
+
+	&__copyright {
+		color: $color-default-white;
+
+		span {
+			color: $color-default-white;
+		}
+	}
+
+	&__column {
+		&-link {
+			color: $color-default-white;
+		}
+	}
+}

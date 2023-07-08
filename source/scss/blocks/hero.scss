@@ -1,0 +1,130 @@
+.hero {
+	&__inner {
+		@include media(xl) {
+			position: relative;
+			overflow: hidden;
+			display: flex;
+			max-width: $width--full;
+		}
+
+		@include media(xxl) {
+		}
+	}
+
+	&__content {
+		@include media(xl) {
+			position: absolute;
+			left: 15px;
+			z-index: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			width: 54.8%;
+			height: 100%;
+			padding-left: 17.86vw;
+			padding-right: 40px;
+			background-color: $color-default-white;
+		}
+
+		@include media(xxl) {
+			width: 44.8%;
+		}
+	}
+
+	&__tag {
+		position: absolute;
+		left: 0;
+		top: 50%;
+
+		writing-mode: vertical-rl;
+		transform: translateY(-100%) rotate(180deg);
+	}
+
+	&__heading {
+		position: relative;
+		margin-bottom: 60px;
+		padding-left: 100px;
+
+		line-height: 1.125;
+
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: 50%;
+			transform: translateY(50%);
+			width: 83px;
+			height: 62px;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg viewBox='0 0 83 62' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M18.6.2c6.267 0 11 2.267 14.2 6.8 3.333 4.4 5 9.667 5 15.8 0 8.267-2.467 15.933-7.4 23-4.8 7.067-10.867 12.333-18.2 15.8L.4 52.2c5.333-2.133 10-5.067 14-8.8 4-3.867 6.733-7.867 8.2-12l-1-.6c-.667.533-1.467.933-2.4 1.2-.933.267-2.267.4-4 .4-3.067 0-6.2-1.2-9.4-3.6-3.067-2.533-4.6-6.333-4.6-11.4 0-5.333 1.733-9.533 5.2-12.6S13.933.2 18.6.2zm44.8 0c6.267 0 11 2.267 14.2 6.8 3.333 4.4 5 9.667 5 15.8 0 8.267-2.467 15.933-7.4 23-4.8 7.067-10.867 12.333-18.2 15.8l-11.8-9.4c5.333-2.133 10-5.067 14-8.8 4-3.867 6.733-7.867 8.2-12l-1-.6c-.667.533-1.467.933-2.4 1.2-.933.267-2.267.4-4 .4-3.067 0-6.2-1.2-9.4-3.6-3.067-2.533-4.6-6.333-4.6-11.4 0-5.333 1.733-9.533 5.2-12.6S58.733.2 63.4.2z' fill='%23FBC710'/%3e%3c/svg%3e ");
+
+			@include media(xl) {
+				left: 56px;
+				bottom: -28px;
+				transform: translateY(0);
+			}
+		}
+
+		@include media(md) {
+			padding-left: 120px;
+			font-size: 42px;
+		}
+
+		@include media(lg) {
+			font-size: 64px;
+		}
+
+		@include media(xl) {
+			display: flex;
+			flex-direction: column;
+
+			padding: 66px 0 132px 56px;
+			font-size: 80px;
+
+			&::before {
+				content: "";
+				position: absolute;
+				width: 232px;
+				height: 100%;
+				top: 0;
+				left: 0;
+				border: solid 4px $color-yellow;
+				border-right: none;
+			}
+		}
+	}
+
+	&__text {
+		@include media(sm) {
+			max-width: 75%;
+		}
+		@include media(xl) {
+			max-width: 340px;
+		}
+	}
+
+	&__image {
+		margin-bottom: 48px;
+
+		@include media(xl) {
+			margin-bottom: 0;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+
+			@include media(xl) {
+				width: 1560px;
+				margin-left: calc(100% - 1560px);
+			}
+
+			@include media(xxl) {
+				width: 100%;
+				margin-left: 0;
+			}
+		}
+	}
+}

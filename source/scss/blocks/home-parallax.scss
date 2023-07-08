@@ -1,0 +1,203 @@
+.parallax {
+	min-height: 100vh;
+	overflow-y: auto;
+	color: $color-default-white;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	.scroll-wrap {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		position: relative;
+		min-height: 100%;
+		padding: 115px 0 144px;
+
+		@include media(xl) {
+			padding: 115px 0 110px;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__type {
+		display: none;
+		font-size: 16px;
+		line-height: 18.77px;
+		text-transform: uppercase;
+		transform: rotate(-90deg);
+		position: absolute;
+		top: 33.3%;
+		left: 18px;
+
+		@include media(xxl) {
+			display: block;
+		}
+	}
+
+	&__year {
+		display: none;
+		font-size: 16px;
+		line-height: 18.77px;
+		transform: rotate(-90deg);
+		position: absolute;
+		top: 28.8%;
+		left: 5px;
+
+		@include media(md) {
+			display: block;
+		}
+
+		@include media(xxl) {
+			left: 46px;
+		}
+	}
+
+	&__project {
+		max-width: 200px;
+		padding: 35px;
+		position: relative;
+
+		@include media(md) {
+			max-width: 300px;
+		}
+
+		@include media(xl) {
+			max-width: 471px;
+			padding: 68px 61px;
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			width: 110px;
+			height: 100%;
+			border: 4px solid $color-yellow;
+			border-right: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+
+			@include media(xl) {
+				width: 163px;
+			}
+		}
+	}
+
+	&__tag {
+		margin-bottom: 14px;
+		@include fluid-font-size(14px, 16px, 320px, 991px);
+
+		@include media(lg) {
+			font-size: 16px;
+			line-height: 26px;
+		}
+	}
+
+	&__title {
+		font-family: $font-family--secondary;
+		font-weight: bold;
+		@include fluid-font-size(20px, 40px, 320px, 991px);
+
+		@include media(lg) {
+			font-size: 60px;
+			line-height: 68px;
+		}
+
+		@include media(xl) {
+			font-size: 80px;
+			line-height: 90px;
+		}
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		margin-top: 60px;
+		font-weight: bold;
+		color: $color-default-white;
+		@include transition(color);
+		@include fluid-font-size(14px, 20px, 320px, 991px);
+
+		@include media(lg) {
+			font-size: 20px;
+		}
+
+		@include media(xl) {
+			margin-top: 144px;
+		}
+
+		@include hover {
+			color: $color-yellow;
+
+			svg {
+				fill: $color-yellow;
+			}
+		}
+
+		svg {
+			margin-left: 10px;
+			fill: $color-default-white;
+			@include transition(fill);
+		}
+	}
+
+	&__counter {
+		padding-top: 10px;
+		padding-right: 10px;
+		font-family: $font-family--secondary;
+
+		.current {
+			font-weight: bold;
+			position: relative;
+			@include fluid-font-size(32px, 60px, 320px, 991px);
+
+			@include media(lg) {
+				font-size: 60px;
+				bottom: -48px;
+				right: 7px;
+			}
+
+			@include media(xl) {
+				font-size: 80px;
+				bottom: -76px;
+				right: 13px;
+			}
+		}
+
+		.total {
+			@include fluid-font-size(18px, 28px, 320px, 991px);
+
+			@include media(lg) {
+				font-size: 28px;
+			}
+
+			@include media(xl) {
+				font-size: 32px;
+			}
+		}
+	}
+
+	&__partners {
+		margin-top: 78px;
+
+		.partners__item {
+			width: auto;
+			text-align: left;
+		}
+	}
+
+	&__latest-news {
+		.latest-news__header {
+			margin-bottom: 85px;
+		}
+	}
+
+	.reviews-carousel .swiper-pagination {
+		margin-top: 50px;
+	}
+}

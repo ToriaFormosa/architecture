@@ -1,0 +1,7 @@
+mixin intro-card(item)
+	- let tag = item.cardTag ? item.cardTag : 'div';
+	#{tag}.intro__card&attributes(attributes)
+		a.animsition-link(href= item.href)
+			img(src= item.img + '.jpg', srcset= item.img + '@2x.jpg', alt= item.title)
+		h3.intro__card-title
+			a.animsition-link(href= item.href)= item.title

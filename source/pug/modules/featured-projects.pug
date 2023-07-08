@@ -1,0 +1,43 @@
+section.webpage__featured-projects.featured-projects
+	- let fpPath = 'img/picture/featured-projects/';
+
+	header.featured-projects__header.container(data-aos="fade")
+		h2.featured-projects__heading.heading Featured projects
+		a.featured-projects__more.more(href= isDark ? URLS.projects.gridDark : URLS.projects.grid) View all projects
+			+icon('chevron-right')(width="20", height="20")
+	.featured-projects__inner.container
+		.row
+			.featured-projects__item.col-12.col-lg-4(data-aos="fade")
+				.preview-card(tabindex="0")
+					.preview-card__image
+						img(src= fpPath + '1.jpg', srcset= fpPath + '1@2x.jpg', width="600", height="1176", alt="")
+					.preview-card__content
+						h3.preview-card__heading.preview-card__heading--large Spain <br>Working <br>Building
+						.preview-card__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+						a.preview-card__btn(href= isDark ? URLS.projects.detailDark : URLS.projects.detail) See project
+			.col-12.col-lg-8
+				.row
+					.featured-projects__item.col-12.col-lg-6(data-aos="fade")
+						.preview-card(tabindex="0")
+							.preview-card__image
+								img(src= fpPath + '2.jpg', srcset= fpPath + '2@2x.jpg', width="600", height="573", alt="")
+							.preview-card__content
+								h3.preview-card__heading.preview-card__heading--large Spain <br>Working <br>Building
+								.preview-card__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+								a.preview-card__btn(href= isDark ? URLS.projects.detailDark : URLS.projects.detail) See project
+					.featured-projects__item.col-12.col-lg-6(data-aos="fade")
+						.preview-card(tabindex="0")
+							.preview-card__image
+								img(src= fpPath + '3.jpg', srcset= fpPath + '3@2x.jpg', width="600", height="573", alt="")
+							.preview-card__content
+								h3.preview-card__heading.preview-card__heading--large Spain <br>Working <br>Building
+								.preview-card__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+								a.preview-card__btn(href= isDark ? URLS.projects.detailDark : URLS.projects.detail) See project
+
+				.featured-projects__item.preview-card(tabindex="0", data-aos="fade")
+					.preview-card__image
+						img(src= fpPath + '4.jpg', srcset= fpPath + '4@2x.jpg', width="1227", height="573", alt="")
+					.preview-card__content
+						h3.preview-card__heading.preview-card__heading--large Spain <br>Working <br>Building
+						.preview-card__text Projects for many large domestic and foreign corporations, enterprises in many elds such as nance, banking, F&B, education, communication.
+						a.preview-card__btn(href= isDark ? URLS.projects.detailDark : URLS.projects.detail) See project
